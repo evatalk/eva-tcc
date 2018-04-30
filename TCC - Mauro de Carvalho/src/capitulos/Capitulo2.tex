@@ -91,10 +91,58 @@ Porém, para que possam se utilizar dos recursos mais avançados dessas platafor
 
 Caso o desenvolvedor opte pela não utilização dessas plataformas de \textit{chatbots}, ele poderá customizar a sua aplicação utilizando as tecnologias, ferramentas e serviços que lhe bem convir.
 Por exemplo, ele poderá escolher desde de uma linguagem de programação específica até qual serviço de IA (caso seja um \textit{chatbot} de domínio amplo) que ele irá utilizar no projeto.
-Como dito na seção \ref{cap:02:sec:03:sub:chatbotsmessenger}, muitos \textit{messengers} oferecem suporte e serviços, por meio de suas APIs, que facilitam o processo de desenvolvimento e integração do \textit{chatbot} em sua plataforma. Assim, o desenvolvedor poderá avaliar dentre os serviços oferecidos por esses \textit{messengers} e escolher qual lhe oferece mais benefícios.
+Como dito na seção \ref{cap:02:sec:03:sub:chatbotsmessenger}, muitos \textit{messengers} oferecem suporte e serviços, por meio de suas APIs, que facilitam o processo de desenvolvimento e integração do \textit{chatbot} em sua plataforma.
+Assim, o desenvolvedor poderá avaliar dentre os serviços oferecidos por esses \textit{messengers} e escolher qual lhe oferece mais benefícios.
 
-É válido ressaltar a existência de bibliotecas que facilitam ainda mais o de desenvolvimento de \textit{chatbots}. Essas, por sua vez, abstraem algumas etapas no processo de criação e integração dos \textit{chatbots} com os \textit{messengers}. Podemos resumi-las em uma implementação real das regras de uma API de um \textit{messenger}, no contexto de \textit{chatbots}, elas oferecem uma interface mais simplificada para o seu desenvolvimento, utilizando alguma linguagem de programação específica, aonde se abstrai, por exemplo, a necessidade de programar rotinas que possibilitem a comunicação do \textit{chatbot}, via algum protocolo pré-determinado, com a API do \textit{messenger}.
+É válido ressaltar a existência de bibliotecas que facilitam ainda mais o de desenvolvimento de \textit{chatbots}.
+Essas, por sua vez, abstraem algumas etapas no processo de criação e integração dos \textit{chatbots} com os \textit{messengers}.
+Podemos resumi-las em uma implementação real das regras de uma API de um \textit{messenger}, no contexto de \textit{chatbots}, elas oferecem uma interface mais simplificada para o seu desenvolvimento, utilizando alguma linguagem de programação específica, aonde se abstrai, por exemplo, a necessidade de programar rotinas que possibilitem a comunicação do \textit{chatbot}, via algum protocolo pré-determinado, com a API do \textit{messenger}.
 
 Porém, ao escolher esse modelo criação, o desenvolvedor irá demorar mais tempo durante o processo de desenvolvimento do \textit{chatbot} em comparação aos serviços oferecidos pelas plataformas de \textit{chatbots}. 
 
-\COMMENT{PRECISA DE UM FECHAMENTO MELHOR}
+\section{Projetando \textit{chatbots}}\label{cap:02:sec:05:projeto}
+
+Como sistemas computacionais são construídos para terem utilidade no mundo real, modelar o domínio de aplicação é uma atividade de suma importância.
+A partir dessa atividade, pode se compreender a necessidade do sistema a ser construído e também definir os requisitos que tornam o sistema útil~\cite{ReqJair}. 
+Pelo fato do \textit{chatbot} também se tratar de um produto digital, algumas práticas e estudos também devem ser realizados em seu processo de criação. Algumas dessas pŕaticas envolvem o levantamento e especificação dos requisitos, a elaboração dos diálogos do \textit{chatbot} e também as tecnologias que serão utilizadas em seu desenvolvimento.
+
+\subsection{Análise e especificação dos requisitos}
+
+De acordo com \alusao{ReqJair} a análise e especificação de requisitos de software envolve as atividades de determinar os objetivos de um software e as restrições associadas a ele.
+\alusao{ReqJair} diz que a análise é o processo de observação e levantamento dos elementos do domínio no qual o sistema será introduzido. Deve-se identificar  as pessoas, atividades, informações do domínio para que se possa decidir o que deverá ser informatizado ou não.
+Já a especificação é a descrição sistemática e abstrata do que o software deve fazer, a partir daquilo que foi analisado.
+
+\alusao{Sommerville} estabelece que os requisitos de um sistema são as descrições do que o sistema deve fazer, os serviços que oferece e as restrições a seu funcionamento.
+Esses requisitos refletem as necessidades dos clientes para um sistema que serve a uma finalidade determinada, como controlar um dispositivo, efetuar um pedido ou encontrar informações.
+É válido ressaltar que os requisitos de software são frequentemente classificados como requisitos funcionais e requisitos não funcionais.
+
+Os requisitos funcionais de um sistema descrevem o que ele deve fazer.
+Eles dependem do tipo de software a ser desenvolvido, de quem são seus possíveis usuários e da abordagem geral adotada pela organização ao escrever os requisitos~\cite{Sommerville}.
+Quando expressos como requisitos de usuário, os requisitos funcionais são normalmente descritos de forma abstrata, para serem compreendidos pelos usuários do sistema.\label{texto:requisito_funcional}
+
+Já os requisitos não funcionais, como o nome sugere, são requisitos que não estão diretamente relacionados com os serviços específicos oferecidos pelo sistema a seus usuários~\cite{Sommerville}.
+Eles podem estar relacionados às propriedades emergentes do sistema, como confiabilidade, tempo de resposta e ocupação de área.\label{texto:requisito_nao_funcional}
+
+\subsection{Especificando requisitos utilizando casos de uso}
+
+De acordo com \alusao{ReqJair} um caso de uso especifica o comportamento do sistema a ser desenvolvido sem, no entanto, especificar como este comportamento será implementado.
+Os comportamentos descrevem as funções da aplicação que caracterizam a funcionalidade do sistema.
+Um caso de uso representa o que o sistema faz e não como o sistema faz, proporcionando uma visão externa e não interna do sistema. Cada caso de uso define um requisito funcional do sistema~\cite{ReqJair}.
+
+O caso de uso descreve um conjunto de sequências de ações que o sistema desempenha para produzir um resultado esperado pelo usuário.
+Cada sequência representa a interação de entidades externas e o sistema~\cite{ReqJair}.
+Estas entidades são chamadas de atores e que podem ser usuários ou outros sistemas.
+No caso de usuários, um ator representa na verdade uma função de usuários. Para isso, normalmente se utiliza da notação UML como linguagem de especificação para representar os casos de uso. Abaixo, um exemplo de especificação de casos de uso utilizando UML.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{src/imagens/casosd2.png}
+\caption{Caso de uso - Sistema de Vendas. Fonte:~\cite{ReqJair2}}
+\label{cap:01:fig:fluxograma}
+\end{figure}
+
+\subsection{Elaboração dos diálogos de um \textit{chatbot} a partir de cenários}
+
+Para a elaboração dos diálogos que irão fazer parte do repertório de um \textit{chatbot}, uma técnica utilizada para a sua modelagem e especificação é utilizando os cenários.
+\alusao{ReqJair} diz que cenários consistem de uma coleção de narrativas de situações no domínio que favorecem o levantamento de informações, a identificação de problemas e a antecipação das soluções.
+Cenários são uma maneira de representar, no contexto de \textit{chatbots}, os diálogos e interações e as possibilidades que podem surgir a partir destes. Abaixo, um exemplo de cenário que simula o diálogo entre uma atendente e um consumidor:
