@@ -9,7 +9,7 @@ Ela irá atender tais solicitações via mecanismo de conversação textual na p
 Por meio de EVA, os alunos vinculados ao EV.G poderão usufruir de várias funcionalidades.
 Eles irão gerenciar seus cursos visualizando o andamento das inscrições, terão acesso ao catálogo unificado, calendário de turmas, histórico escolar e também serão auxiliados no processo de emissão de certificado. Tudo por meio de um acesso único e simplificado.
 
-\section{Especificação dos requisitos de EVA}
+\section{Especificação dos requisitos de EVA}\label{especificacao-requisitos-eva}
 
 Como dito \ref{cap:02:sec:05:projeto}, modelar o domínio de aplicação de um \textit{chatbot} é uma atividade de suma importância, pois, a partir desta atividade, pode se compreender a necessidade do sistema a ser construído, e também, definir os requisitos que o tornam útil.
 É interessante deixar claro, que todo o processo de levantamento e validação dos requisitos foi realizado e entregue por parte da EV.G. Assim, não haverá nenhuma seção que aborde como se deu tal levantamento. Ao invés disso, os requisitos de EVA serão apenas especificados nas subseções a seguir.
@@ -22,21 +22,21 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
 \textsf{\caption{Especificação de requisitos funcionais de EVA}}\label{table:tabela1}
 \center
 \footnotesize
-\begin{tabular}{|p{1cm}|p{3.5cm}|p{7.5cm}|}
+\begin{tabular}{|p{1.2cm}|p{3.5cm}|p{7.5cm}|}
   \hline
-   \textbf{\#} & \textbf{Nome}  & \textbf{Descrição}  \\
+   \textbf{\#RF} & \textbf{Nome}  & \textbf{Descrição}  \\
     \hline
-    RF1 & Conversação & Permitir que o usuário interaja com o \textit{chatbot} na língua portuguesa por meio de mensagens textuais em um \textit{messenger}. \\
+    RF01 & Conversação & Permitir que o usuário interaja com o \textit{chatbot} na língua portuguesa por meio de mensagens textuais em um \textit{messenger}. \\
     \hline
-    RF2 & Compreensão & O \textit{chatbot} deve ser capaz de compreender o que o usuário solicita, através das mensagens textuais enviadas por ele, e tomar as devidas decisões para atende-lo. \\
+    RF02 & Compreensão & O \textit{chatbot} deve ser capaz de compreender o que o usuário solicita, através das mensagens textuais enviadas por ele, e tomar as devidas decisões para atende-lo. \\
     \hline
-    RF3 & Autenticação & O \textit{chatbot} deve possuir uma forma de identificar o usuário que está solicitando acesso à aplicação. \\
+    RF03 & Autenticação & O \textit{chatbot} deve possuir uma forma de identificar o usuário que está solicitando acesso à aplicação. \\
    \hline
-     RF4 & Visualizar o histórico escolar & O \textit{chatbot} deve informar ao usuário o seu histórico escolar completo caso seja solicitado por ele. \\
+     RF04 & Visualizar o histórico escolar & O \textit{chatbot} deve informar ao usuário o seu histórico escolar completo caso seja solicitado por ele. \\
    \hline
-    RF5 & Auxiliar na emissão de certificados & O \textit{chatbot} deve auxiliar o usuário no processo de emissão de certificados dos cursos concluídos por ele, caso seja solicitado por ele. \\
+    RF05 & Auxiliar na emissão de certificados & O \textit{chatbot} deve auxiliar o usuário no processo de emissão de certificados dos cursos concluídos por ele, caso seja solicitado por ele. \\
    \hline
-    RF6 & Visualizar as inscrições de cursos & O \textit{chatbot} deve exibir ao usuário quais inscrições de cursos que estão abertas, caso seja solicitado por ele. \\
+    RF06 & Visualizar as inscrições de cursos & O \textit{chatbot} deve exibir ao usuário quais inscrições de cursos que estão abertas, caso seja solicitado por ele. \\
    \hline
    
 \end{tabular}
@@ -44,25 +44,43 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
 
 \subsection{Requisitos não funcionais}
 
-Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, estão listados os requisitos funcionais elencados para o sistema de EVA
+Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, estão listados os requisitos funcionais elencados para o sistema de EVA.
 
 \begin{table}[htb]
 \textsf{\caption{Especificação de requisitos não funcionais de EVA}}
 \center
 \footnotesize
-\begin{tabular}{|p{1cm}|p{3.5cm}|p{7.5cm}|}
+\begin{tabular}{|p{1.2cm}|p{3.5cm}|p{7.5cm}|}
   \hline
-   \textbf{\#} & \textbf{Nome}  & \textbf{Descrição}  \\
-    \hline
-    RNF1 & Disponibilidade & O sistema deve estar disponível continuamente (24 horas/ 7 dias por semana). \\
+   \textbf{\#RNF} & \textbf{Nome}  & \textbf{Descrição}  \\
    \hline
-    RNF2 & Confidencialidade & O sistema deve garantir a visualização dos dados apenas pelo usuário associado. \\
+    RNF01 & Disponibilidade & O sistema deve estar disponível continuamente (24 horas / 7 dias por semana). \\
+   \hline
+    RNF02 & Confidencialidade & O sistema deve garantir a visualização dos dados apenas pelo usuário associado. \\
+   \hline
+    RNF03 & Integridade & O sistema deve garantir que caso algum usuário falhe ao tentar se autenticar por três vezes consecutivas, bloqueie as tentativas de acesso dele durante 24 horas. \\
+   \hline
+   RNF04 & Portabilidade & O sistema deverá atender prioritariamente na plataforma de mensagens instantâneas Telegram. \\
+   \hline
+    RNF05 & Interoperabilidade & O sistema deverá se comunicar com algum serviço de Processamento de Linguagem Natural. \\
+   \hline
+    RNF06 & Implementação & O sistema deverá ser implementado utilizando a linguagem de programação Python. \\
    \hline
    
 \end{tabular}
 \end{table}\label{tabela:3}
 
-\todo{Adicionar base de conhecimento (WIT), Adicionar em qual plataforma ele irá funcionar (Telegram)}
+\section{Especificação dos casos de uso}
+
+Na seção \ref{texto:especificando-com-casos-de-uso}, foi descrito o que são casos de uso e como eles normalmente são utilizados durante o projeto de um sistema. Elaborar os casos de uso permite definir quais funções da aplicação que o sistema deverá oferecer para o usuário. Para a sua especificação, serão utilizados alguns dos requisitos funcionais e não funcionais, identificados na seção \ref{especificacao-requisitos-eva} para descrever a funcionalidade do sistema.
+
+\subsection{Identificação dos atores}
+
+\subsection{Identificação dos casos de uso}
+
+\subsection{Diagrama de casos de uso}
+
+\subsection{Detalhamento dos casos de uso}
 
 \section{Modelagem dos diálogos de EVA}
 
