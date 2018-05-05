@@ -11,17 +11,21 @@ Eles irão gerenciar seus cursos visualizando o andamento das inscrições, ter�
 
 \section{Especificação dos requisitos de EVA}\label{especificacao-requisitos-eva}
 
-Como dito \ref{cap:02:sec:05:projeto}, modelar o domínio de aplicação de um \textit{chatbot} é uma atividade de suma importância, pois, a partir desta atividade, pode se compreender a necessidade do sistema a ser construído, e também, definir os requisitos que o tornam útil.
+Como dito \ref{cap:02:sec:05:projeto}, modelar o domínio de aplicação de um \textit{chatbot} é uma atividade de importante, pois, a partir desta atividade, pode se compreender a necessidade do sistema a ser construído, e também, definir os requisitos que o tornam útil.
 É interessante deixar claro, que todo o processo de levantamento e validação dos requisitos foi realizado e entregue por parte da EV.G. Assim, não haverá nenhuma seção que aborde como se deu tal levantamento. Ao invés disso, os requisitos de EVA serão apenas especificados nas subseções a seguir.
 
 \subsection{Requisitos funcionais}
 
-Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos funcionais de um sistema. Abaixo, estão listados os requisitos funcionais elencados para o sistema de EVA.
+Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais elencados para o sistema de EVA.
 
 \begin{table}[htb]
-\textsf{\caption{Especificação de requisitos funcionais de EVA}}\label{table:tabela1}
-\center
-\footnotesize
+\caption{Especificação de requisitos funcionais de EVA}
+% \textsf{\caption{Especificação de requisitos funcionais de EVA}}
+\label{tabela:tabela1}
+% \center
+% \footnotesize
+\centering
+\medskip
 \begin{tabular}{|p{1.2cm}|p{3.5cm}|p{7.5cm}|}
   \hline
    \textbf{\#RF} & \textbf{Nome}  & \textbf{Descrição}  \\
@@ -38,16 +42,16 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
    \hline
     RF06 & Visualizar as inscrições de cursos & O \textit{chatbot} deve exibir ao usuário quais inscrições de cursos que estão abertas, caso seja solicitado por ele. \\
    \hline
-   
 \end{tabular}
 \end{table}
 
 \subsection{Requisitos não funcionais}
 
-Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, estão listados os requisitos funcionais elencados para o sistema de EVA.
+Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
 
-\begin{table}[htb]
-\textsf{\caption{Especificação de requisitos não funcionais de EVA}}
+\begin{table}[htb!]
+\caption{Especificação de requisitos não funcionais de EVA}
+\label{tabela:tabela2}
 \center
 \footnotesize
 \begin{tabular}{|p{1.2cm}|p{3.5cm}|p{7.5cm}|}
@@ -70,15 +74,63 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
 \end{tabular}
 \end{table}\label{tabela:3}
 
-\section{Especificação dos casos de uso}
+\section{Casos de uso de EVA}
 
-Na seção \ref{texto:especificando-com-casos-de-uso}, foi descrito o que são casos de uso e como eles normalmente são utilizados durante o projeto de um sistema. Elaborar os casos de uso permite definir quais funções da aplicação que o sistema deverá oferecer para o usuário. Para a sua especificação, serão utilizados alguns dos requisitos funcionais e não funcionais, identificados na seção \ref{especificacao-requisitos-eva} para descrever a funcionalidade do sistema.
+Na seção \ref{texto:especificando-com-casos-de-uso}, foi descrito o que são casos de uso e como eles normalmente são utilizados durante o projeto de um sistema. Elaborar os casos de uso permite definir quais funções de aplicação que o sistema deverá oferecer ao usuário~\cite{ReqJair}. Para a sua especificação, serão utilizados também alguns dos requisitos funcionais e não funcionais, que foram detalhados na seção \ref{especificacao-requisitos-eva}, para que se possa descrever as funcionalidades do sistema com ainda mais propriedade. Nas subseções a seguir, será realizado todo o processo de especificação e detalhamento dos casos de uso de EVA.
 
-\subsection{Identificação dos atores}
+\subsection{Especificação dos atores}
 
-\subsection{Identificação dos casos de uso}
+Um ator é algo com comportamento, tal como uma pessoa (identificada por seu papel), um sistema ou uma organização~\cite{CraigLarman}. No que se diz respeito a EVA, foram identificados como atores o Visitante e o Aluno. Ambos poderão interagir com EVA, por meio de mensagens textuais, porém com as devidas restrições. É válido ressaltar, que a EVA não entra como ator, já que será o próprio sistema na qual estamos modelando.
+
+\begin{table}[htb!]
+\textsf{\caption{Especificação dos atores do sistema de EVA}}
+\center
+\footnotesize
+\begin{tabular}{|p{2cm}|p{3cm}|p{7.5cm}|}
+  \hline
+   \textbf{\#Ator} & \textbf{Nome}  & \textbf{Descrição}  \\
+   \hline
+    Ator01 & Visitante & Qualquer pessoa que interaja com EVA sem estar devidamente autenticado e identificado no sistema. \\
+   \hline
+    Ator02 & Aluno & Qualquer pessoa que interaja com EVA e esteja devidamente autenticado e identificado no sistema. \\
+   \hline
+\end{tabular}
+\end{table}\label{tabela:3}
+
+
+\subsection{Especificação dos casos de uso}
+
+\begin{table}[htb!]
+\textsf{\caption{Especificação dos casos de uso de EVA}}
+\center
+\footnotesize
+\begin{tabular}{|p{2cm}|p{3cm}|p{7.5cm}|}
+  \hline
+   \textbf{\#UC} & \textbf{Nome}  & \textbf{Descrição}  \\
+   \hline
+    UC01 & Dialogar com EVA & Os usuários do sistema poderão dialogar com EVA por meio de mensagens textuais, na língua portuguesa, através de um \textit{messenger}. A partir dessa funcionalidade, o usuário irá acessar todas as demais.\\
+   \hline
+    UC02 & Efetuar login & Autenticação de um usuário, permitindo que ele tenha acesso às funcionalidades restritas de EVA. \\
+   \hline
+    UC03 & Visualizar histórico escolar completo & O usuário poderá solicitar a visualização do histórico de todos os cursos que ele esteve matriculado no âmbito da EV.G. \\
+   \hline
+    UC04 & Receber auxílio na emissão de certificados & O usuário poderá solicitar auxilio para a emissão dos certificados dos cursos no qual ele finalizou no âmbito da EV.G. \\
+   \hline
+    UC05 & Visualizar inscrições de cursos abertos & O usário poderá solicitar a visualização de todos os cursos na qual possui matricula ativa no âmbito da EV.G. \\
+   \hline
+    UC06 & Efetuar logout & O usuário deixará de estar autenticado no sistema. Com isso, ele volta a possuir acesso limitado às funcionalidades de EVA.\\
+   \hline
+\end{tabular}
+\end{table}\label{tabela:3}
 
 \subsection{Diagrama de casos de uso}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{src/imagens/CasoDeUsoEva.png}
+\caption{Fonte: Elaborado pelo autor (2018)}
+\label{cap:01:fig:fluxograma}
+\end{figure}
 
 \subsection{Detalhamento dos casos de uso}
 
