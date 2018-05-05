@@ -9,17 +9,17 @@ Ela irá atender tais solicitações via mecanismo de conversação textual na p
 Por meio de EVA, os alunos vinculados ao EV.G poderão usufruir de várias funcionalidades.
 Eles irão gerenciar seus cursos visualizando o andamento das inscrições, terão acesso ao catálogo unificado, calendário de turmas, histórico escolar e também serão auxiliados no processo de emissão de certificado. Tudo por meio de um acesso único e simplificado.
 
-\section{Especificação dos requisitos de EVA}\label{especificacao-requisitos-eva}
+\section{Detalhamento dos requisitos de EVA}\label{especificacao-requisitos-eva}
 
 Como dito \ref{cap:02:sec:05:projeto}, modelar o domínio de aplicação de um \textit{chatbot} é uma atividade de importante, pois, a partir desta atividade, pode se compreender a necessidade do sistema a ser construído, e também, definir os requisitos que o tornam útil.
-É interessante deixar claro, que todo o processo de levantamento e validação dos requisitos foi realizado e entregue por parte da EV.G. Assim, não haverá nenhuma seção que aborde como se deu tal levantamento. Ao invés disso, os requisitos de EVA serão apenas especificados nas subseções a seguir.
+É interessante deixar claro, que todo o processo de levantamento e validação dos requisitos foi realizado e entregue por parte da EV.G. Assim, não haverá nenhuma seção que aborde como se deu tal levantamento. Ao invés disso, os requisitos de EVA serão apenas detalhados nas subseções a seguir.
 
 \subsection{Requisitos funcionais}
 
 Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais elencados para o sistema de EVA.
 
 \begin{table}[htb]
-\caption{Especificação de requisitos funcionais de EVA}
+\caption{Detalhamento de requisitos funcionais de EVA}
 % \textsf{\caption{Especificação de requisitos funcionais de EVA}}
 \label{tabela:tabela1}
 % \center
@@ -50,7 +50,7 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
 Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
 
 \begin{table}[htb!]
-\caption{Especificação de requisitos não funcionais de EVA}
+\caption{Detalhamento de requisitos não funcionais de EVA}
 \label{tabela:tabela2}
 \center
 \footnotesize
@@ -80,28 +80,32 @@ Na seção \ref{texto:especificando-com-casos-de-uso}, foi descrito o que são c
 
 \subsection{Especificação dos atores}
 
-Um ator é algo com comportamento, tal como uma pessoa (identificada por seu papel), um sistema ou uma organização~\cite{CraigLarman}. No que se diz respeito a EVA, foram identificados como atores o Visitante e o Aluno. Ambos poderão interagir com EVA, por meio de mensagens textuais, porém com as devidas restrições. É válido ressaltar, que a EVA não entra como ator, já que será o próprio sistema na qual estamos modelando.
+Um ator é algo com comportamento, tal como uma pessoa (identificada por seu papel), um sistema ou uma organização~\cite{CraigLarman}. No que se diz respeito a EVA, foram identificados como atores o Visitante e o Aluno. Ambos poderão interagir com EVA, por meio de mensagens textuais, porém com as devidas restrições. É válido ressaltar, que a EVA não entra como ator, já que será o próprio sistema na qual está sendo modelando. Na Tabela \ref{tabela:tabela3} os atores são especificados.
 
 \begin{table}[htb!]
-\textsf{\caption{Especificação dos atores do sistema de EVA}}
+\caption{Especificação dos atores do sistema de EVA}
+\label{tabela:tabela3}
 \center
 \footnotesize
 \begin{tabular}{|p{2cm}|p{3cm}|p{7.5cm}|}
   \hline
-   \textbf{\#Ator} & \textbf{Nome}  & \textbf{Descrição}  \\
+   \textbf{\#ATOR} & \textbf{Nome}  & \textbf{Descrição}  \\
    \hline
-    Ator01 & Visitante & Qualquer pessoa que interaja com EVA sem estar devidamente autenticado e identificado no sistema. \\
+    ATOR01 & Visitante & Qualquer pessoa que interaja com EVA sem estar devidamente autenticado e identificado no sistema. \\
    \hline
-    Ator02 & Aluno & Qualquer pessoa que interaja com EVA e esteja devidamente autenticado e identificado no sistema. \\
+    ATOR02 & Aluno & Qualquer pessoa que interaja com EVA e esteja devidamente autenticado e identificado no sistema. \\
    \hline
 \end{tabular}
-\end{table}\label{tabela:3}
+\end{table}
 
 
 \subsection{Especificação dos casos de uso}
 
+Como dito no começo desta seção, casos de uso permitem definir as funções de aplicação que o sistema deverá oferecer para o usuário. A partir dos requisitos funcionais identificados para EVA, foram extraídos os casos de uso especificados na Tabela \ref{tabela:tabela4}.
+
 \begin{table}[htb!]
-\textsf{\caption{Especificação dos casos de uso de EVA}}
+\caption{Especificação dos casos de uso de EVA}
+\label{tabela:tabela4}
 \center
 \footnotesize
 \begin{tabular}{|p{2cm}|p{3cm}|p{7.5cm}|}
@@ -125,14 +129,96 @@ Um ator é algo com comportamento, tal como uma pessoa (identificada por seu pap
 
 \subsection{Diagrama de casos de uso}
 
+Para descrever de forma visual e clara como se dará o vínculo entre os atores e os casos de uso identificados de EVA, foi criado um diagrama de casos de uso. Para a criação deste, foi utilizada a notação UML.
+
+Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso, que são as possíveis interações que poderão ser realizadas, é representada por uma elipse. As linhas fazem a ligação entre os atores e as interações. Na Figura \ref{cap:03:fig:diagrama}, está representado o diagrama de casos de uso de EVA.
+
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{src/imagens/CasoDeUsoEva.png}
 \caption{Fonte: Elaborado pelo autor (2018)}
-\label{cap:01:fig:fluxograma}
+\label{cap:03:fig:diagrama}
 \end{figure}
 
 \subsection{Detalhamento dos casos de uso}
+
+\subsubsection{UC01 - Dialogar com EVA}
+\textbf{Descrição:}
+
+\begin{itemize}
+    \item \textbf{Ator(es):}
+    \item \textbf{Requisitos funcionais:}
+    \item \textbf{Requisitos não funcionais:}
+\end{itemize}
+
+\textbf{Fluxo básico:}
+
+\subsubsection{UC02 - Efetuar login}
+\textbf{Descrição:}
+
+\begin{itemize}
+    \item \textbf{Ator(es):}
+    \item \textbf{Pré-condições}
+    \item \textbf{Pos-condições}
+    \item \textbf{Requisitos funcionais:}
+    \item \textbf{Requisitos não funcionais:}
+\end{itemize}
+
+\textbf{Fluxo básico:}
+\textbf{Fluxo alternativo A:}
+\textbf{Fluxo alternativo B:}
+
+\subsubsection{UC03 - Visualizar histórico escolar completo}
+\textbf{Descrição:}
+
+\begin{itemize}
+    \item \textbf{Ator(es):}
+    \item \textbf{Pré-condições}
+    \item \textbf{Requisitos funcionais:}
+    \item \textbf{Requisitos não funcionais:}
+\end{itemize}
+
+\textbf{Fluxo básico:}
+\textbf{Fluxo alternativo A:}
+
+\subsubsection{UC04 - Receber auxílio na emissão de certificados}
+\textbf{Descrição:}
+
+\begin{itemize}
+    \item \textbf{Ator(es):}
+    \item \textbf{Pré-condições}
+    \item \textbf{Requisitos funcionais:}
+    \item \textbf{Requisitos não funcionais:}
+\end{itemize}
+
+\textbf{Fluxo básico:}
+\textbf{Fluxo alternativo A:}
+
+\subsubsection{UC05 - Visualizar inscrições de cursos abertos}
+\textbf{Descrição:}
+
+\begin{itemize}
+    \item \textbf{Ator(es):}
+    \item \textbf{Pré-condições}
+    \item \textbf{Requisitos funcionais:}
+    \item \textbf{Requisitos não funcionais:}
+\end{itemize}
+
+\textbf{Fluxo básico:}
+\textbf{Fluxo alternativo A:}
+
+\subsubsection{UC06 - Efetuar logout}
+\textbf{Descrição:}
+
+\begin{itemize}
+    \item \textbf{Ator(es):}
+    \item \textbf{Pré-condições}
+    \item \textbf{Pos-condições}
+    \item \textbf{Requisitos funcionais:}
+    \item \textbf{Requisitos não funcionais:}
+\end{itemize}
+
+\textbf{Fluxo básico:}
 
 \section{Modelagem dos diálogos de EVA}
 
