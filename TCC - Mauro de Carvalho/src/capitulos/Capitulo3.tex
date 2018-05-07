@@ -102,6 +102,7 @@ Um ator é algo com comportamento, tal como uma pessoa (identificada por seu pap
 \subsection{Especificação dos casos de uso}
 
 Como dito no começo desta seção, casos de uso permitem definir as funções de aplicação que o sistema deverá oferecer para o usuário. A partir dos requisitos funcionais identificados para EVA, foram extraídos os casos de uso especificados na Tabela \ref{tabela:tabela4}.
+
 \begin{table}[htb!]
 \caption{Especificação dos casos de uso de EVA}
 \label{tabela:tabela4}
@@ -124,7 +125,7 @@ Como dito no começo desta seção, casos de uso permitem definir as funções d
     UC06 & Efetuar logout & O usuário deixará de estar autenticado no sistema. Com isso, ele volta a possuir acesso limitado às funcionalidades de EVA.\\
    \hline
 \end{tabular}
-\end{table}\label{tabela:3}
+\end{table}
 
 \subsection{Diagrama de casos de uso}
 
@@ -133,7 +134,7 @@ Para descrever de forma visual e clara como se dará o vínculo entre os atores 
 Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso, que são as possíveis interações que poderão ser realizadas, é representada por uma elipse. As linhas fazem a ligação entre os atores e as interações. Na Figura \ref{cap:03:fig:diagrama}, está representado o diagrama de casos de uso de EVA.
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{src/imagens/CasoDeUsoEva.png}
+    \includegraphics[width=0.3\linewidth]{src/imagens/CasoDeUsoEva.png}
     \caption{Fonte: Elaborado pelo autor (2018)}
     \label{cap:03:fig:diagrama}
 \end{figure}
@@ -160,17 +161,16 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item RNF05 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
+    \item \textbf{Fluxo básico:} 
+        \begin{enumerate}
+            \item O usuário envia uma mensagem textual para EVA.
+            \item EVA irá consultar sua base de conhecimento para compreender o que o ator solicita.
+            \item EVA responde ao usuário com base no que foi compreendido.
+        \end{enumerate}
 \end{itemize}
 
-\textbf{Fluxo básico:} 
-    \begin{enumerate}
-        \item O usuário envia uma mensagem textual para EVA.
-        \item EVA irá consultar sua base de conhecimento para compreender o que o ator solicita.
-        \item EVA responde ao usuário com base no que foi compreendido.
-    \end{enumerate}
-
 \subsubsection{UC02 - Efetuar login}
-\textbf{Descrição:} Este caso de uso especifica a ação de autenticação no sistema, com o objetivo de identificar o aluno vinculado ao EV.G, para que se possa auxilia-lo de maneira personalizada, tendo assim, acesso aos recursos mais sofisticados de EVA. O usuário irá informar o seu CPF ou e-mail, EVA irá consultar na sua base de dados afim de verificar se o usuário de fato possui um vinculo com a EV.G, e então será realizada a autenticação ou não.
+\textbf{Descrição:} Este caso de uso especifica a ação de autenticação no sistema, com o objetivo de identificar o aluno vinculado ao EV.G. A partir da autenticação, O aluno passará a receber auxilio personalizado e terá acesso aos recursos mais sofisticados de EVA. O usuário irá informar o seu CPF ou e-mail, EVA irá consultar na sua base de dados afim de verificar se o usuário de fato possui um vinculo com a EV.G, e então será determinado se há a possibilidade de ser realizada a autenticação ou não.
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -199,53 +199,48 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item RNF03 - Integridade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
+    \item \textbf{Fluxo básico:}
+        \begin{enumerate}
+            \item Ao início de uma conversação com EVA, ela irá solicitar que o usuário se identifique, para que ela possa lhe dar auxilio mais personalizado. Para isso, EVA irá solicitar que ele lhe informe o seu CPF ou e-mail cadastrados no EV.G.
+            \item O usuário então irá informar o seu e-mail ou CPF.
+            \item EVA irá verificar se o usuário está bloqueado no sistema.
+            \item EVA irá verificar se o número de tentativas de autenticação chegaram ao valor limite, nesse caso, a três.
+            \item EVA irá consultar em sua base de dados se as informações de fato conferem.
+            \item O sistema então irá autenticar o usuário.
+            \item EVA dá as boas vindas e informa ao usuário que a autenticação foi efetuada com sucesso.
+            \item EVA apresenta as suas funcionalidades ao usuário e o convida a utilizar alguma.
+        \end{enumerate}
+    \item \textbf{Fluxo alternativo A:}
+        \begin{enumerate}
+            \item No Passo 5 do Fluxo Básico, após EVA consultar sua base de dados, foi visto que as informações não conferem.
+            \item A contagem para o limite de tentativas de autenticação de um usuário é incrementada em um.
+            \item EVA então informa ao usuário que os dados não conferem e pede para que ele informe o CPF ou o e-mail novamente.
+            \item O fluxo retornar ao Passo 2 do Fluxo básico.
+        \end{enumerate}
+    \item \textbf{Fluxo alternativo B:}
+        \begin{enumerate}
+            \item No Passo 5 do Fluxo Básico, a mensagem textual enviada pelo usuário não aparenta ser nem algo parecido com CPF ou e-mail.
+            \item EVA informa que ao usuário que ele precisa informar o CPF ou o e-mail para que ele possa se identificar, e assim, para que eles possam continuar dialogando.
+            \item O fluxo retorna ao Passo 2 do Fluxo básico.
+        \end{enumerate}
+    \item \textbf{Fluxo alternativo C:}
+        \begin{enumerate}
+            \item No Passo 3 do Fluxo Básico, foi visto que o usuário está bloqueado no sistema.
+            \item EVA informa que por questões de segurança, o usuário está bloqueado por um dia.
+            \item EVA auxilia o usuário, que caso ele de fato ache que possui algum vinculo com a EV.G, que ele entre em contato através do e-mail da EVG.
+            \item EVA informa o e-mail.
+            \item EVA pede desculpa pelo transtorno.
+        \end{enumerate}
+    \item \textbf{Fluxo alternativo D:}
+        \begin{enumerate}
+            \item No Passo 4 do Fluxo Básico, foi visto que o usuário tentou se autenticar por três vezes sem sucesso.
+            \item EVA bloqueia o usuário por um dia.
+            \item EVA informa que por questões de segurança, o usuário está bloqueado por um dia.
+            \item EVA auxilia o usuário, que caso ele de fato ache que possui um vinculo com a EV.G, que ele entre em contato através do e-mail da EVG.
+            \item EVA informa o e-mail.
+            \item EVA pede desculpa pelo transtorno.
+        \end{enumerate}
 \end{itemize}
-
-\textbf{Fluxo básico:}
-    \begin{enumerate}
-        \item Ao início de uma conversação com EVA, ela irá solicitar que o usuário se identifique, para que ela possa lhe dar auxilio mais personalizado. Para isso, EVA irá solicitar que ele lhe informe o seu CPF ou e-mail cadastrados no EV.G.
-        \item O usuário então irá informar o seu e-mail ou CPF.
-        \item EVA irá verificar se o usuário está bloqueado no sistema.
-        \item EVA irá verificar se o número de tentativas de autenticação chegaram ao valor limite, nesse caso, a três.
-        \item EVA irá consultar em sua base de dados se as informações de fato conferem.
-        \item O sistema então irá autenticar o usuário.
-        \item EVA dá as boas vindas e informa ao usuário que a autenticação foi efetuada com sucesso.
-        \item EVA apresenta as suas funcionalidades ao usuário e o convida a utilizar alguma.
-    \end{enumerate}
-    
-\textbf{Fluxo alternativo A:}
-    \begin{enumerate}
-        \item No Passo 5 do Fluxo Básico, após EVA consultar sua base de dados, foi visto que as informações não conferem.
-        \item A contagem para o limite de tentativas de autenticação de um usuário é incrementada em um.
-        \item EVA então informa ao usuário que os dados não conferem e pede para que ele informe o CPF ou o e-mail novamente.
-        \item O fluxo retornar ao Passo 2 do Fluxo básico.
-    \end{enumerate}
-
-\textbf{Fluxo alternativo B:}
-    \begin{enumerate}
-        \item No Passo 5 do Fluxo Básico, a mensagem texutal enviada pelo usuário não aparenta ser nem algo parecido com CPF ou e-mail.
-        \item EVA informa que ao usuário que ele precisa informar o CPF ou o e-mail para que ele possa se identificar, e assim, para que eles possam continuar dialogando.
-        \item O fluxo retorna ao Passo 2 do Fluxo básico.
-    \end{enumerate}
-    
-\textbf{Fluxo alternativo C:}
-    \begin{enumerate}
-        \item No Passo 3 do Fluxo Básico, foi visto que o usuário está bloqueado no sistema.
-        \item EVA informa que o usuário está bloqueado por um dia.
-        \item EVA auxilia o usuário, que caso ele de fato ache que possui um vinculo com a EV.G, que ele entre em contato através do e-mail da EVG.
-        \item EVA informa o e-mail.
-        \item EVA pede desculpa pelo transtorno.
-    \end{enumerate}
-    
-\textbf{Fluxo alternativo D:}
-    \begin{enumerate}
-        \item No Passo 4 do Fluxo Básico, foi visto que o usuário tentou se autenticar por três vezes sem sucesso.
-        \item EVA bloqueia o usuário por um dia.
-        \item EVA informa que o usuário está bloqueado por um dia.
-        \item EVA auxilia o usuário, que caso ele de fato ache que possui um vinculo com a EV.G, que ele entre em contato através do e-mail da EVG.
-        \item EVA informa o e-mail.
-        \item EVA pede desculpa pelo transtorno.
-    \end{enumerate}
 
 \subsubsection{UC03 - Visualizar histórico escolar completo}
 \textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar o histórico escolar de um aluno vinculado ao EV.G. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, o estado em que se encontra a matrícula do aluno e o estado de sua turma de ensino. 
@@ -272,26 +267,25 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
+    \item \textbf{Fluxo básico:}
+        \begin{enumerate}
+            \item O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar.
+            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
+            \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
+            \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
+            \item EVA irá informar ao aluno o seu histórico escolar completo. Para cada item identificado, EVA deverá especificar os nome do curso, a cargas horária, o estado da matrícula do aluno e o estado da turma de ensino.
+        \end{enumerate}
+    \item \textbf{Fluxo alternativo A:}
+        \begin{enumerate}
+            \item No Passo 3 do Fluxo básico, foi constatado que o aluno não possui nenhuma matricula nos cursos da EV.G.
+            \item EVA irá informar o aluno que ele não possui nenhuma matricula nos cursos da EV.G
+            \item EVA irá sugerir ao aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
+        \end{enumerate}
 \end{itemize}
 
-\textbf{Fluxo básico:}
-    \begin{enumerate}
-        \item O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar.
-        \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
-        \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
-        \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-        \item EVA irá informar ao alunos o seu histórico escolar completo. Para cada item identificado, EVA deverá especificar os nome do curso, a cargas horária, o estado da matrícula do aluno e o estado da turma de ensino.
-    \end{enumerate}
-
-\textbf{Fluxo alternativo A:}
-    \begin{enumerate}
-        \item No Passo 3 do Fluxo básico, foi constatado que o aluno não possui nenhuma matricula nos cursos da EV.G.
-        \item EVA irá informar o aluno que ele não possui nenhuma matricula nos cursos da EV.G
-        \item EVA irá sugerir ao aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
-    \end{enumerate}
 
 \subsubsection{UC04 - Receber auxílio na emissão de certificados}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado ao EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos do aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado.
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado ao EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos pelo aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado. Existem três situações possíveis para a emissão de certificados. O primeira situação, caso o curso tenha sido concluído no ano de 2015 para frente, EVA deve orientar o aluno a emitir o certificado no ambiente https://ava.enap.gov.br. O segundo, caso o curso tenha sido concluído entre os anos de 2013 a 2014, EVA deve orientar o aluno a emitir o certificado no ambiente https://moodle23.enap.gov.br. E o último, caso o curso tenha sido concluído antes do ano de 2013, EVA deverá orientar o aluno a enviar um e-mail para ead@enap.gov.br. Além das instruções para a emissão do certificado, para os itens de cada caso, EVA deverá informar o nome do curso, carga horária, o estado em que se encontra a matrícula do aluno e o estado da turma de ensino.
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -315,11 +309,22 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
+    \item \textbf{Fluxo básico:}
+        \begin{enumerate}
+            \item O aluno envia uma mensagem textual para EVA solicitando ajuda na emissão dos certificados.
+            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
+            \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
+            \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
+            \item EVA irá auxiliar o aluno, com base no ano de conclusão dos cursos encontrados, quais procedimentos ele deverá realizar. Para cada situação, EVA informará o nome do curso, a carga horária, o estado que se encontra a matricula do aluno e o estado da turma de ensino de cada item.
+        \end{enumerate}
+    \item \textbf{Fluxo alternativo A:}
+        \begin{enumerate}
+            \item No Passo 3 do Fluxo principal, foi constatado que o aluno não concluiu nenhum curso da EV.G.
+            \item EVA irá informar oa aluno que ele não concluiu nenhum curso da EV.G, logo, não tem como auxiliá-lo na emissão de certificados.
+            \item EVA irá sugerir o aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
+        \end{enumerate}
 \end{itemize}
 
-\textbf{Fluxo básico:}
-
-\textbf{Fluxo alternativo A:}
 
 \subsubsection{UC05 - Visualizar inscrições de cursos abertos}
 \textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar quais inscrições de cursos de um aluno vinculado ao EV.G que estão em aberto. Para cada item identificado, EVA deve informar o nome do curso, a carga horária e o estado da turma. 
@@ -346,23 +351,40 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
+    \item \textbf{Fluxo básico:}
+        \begin{enumerate}
+            \item O aluno envia uma mensagem textual para EVA solicitando que deseja saber quais cursos que estão em aberto.
+            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
+            \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
+            \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
+            \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, a carga horária e a situação da turma. 
+        \end{enumerate}
+        
+    \item \textbf{Fluxo alternativo A:}
+        \begin{enumerate}
+            \item No Passo 3 do Fluxo principal, foi constatado que o aluno não possui inscrição em nenhum curso da EV.G.
+            \item EVA irá informar ao aluno que ele não possui nenhuma inscrição nos cursos da EV.G.
+            \item EVA irá sugerir o aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
+        \end{enumerate}
 \end{itemize}
 
-\textbf{Fluxo básico:}
-
-\textbf{Fluxo alternativo A:}
-
+    
 \subsubsection{UC06 - Efetuar logout}
-\textbf{Descrição:}
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade onde o usuário deixará de estar autenticado no sistema.
 
 \begin{itemize}
     \item \textbf{Atores:}
         \begin{enumerate}
+            \item ATOR01 - Visitante.
             \item ATOR02 - Aluno.
         \end{enumerate}
     \item \textbf{Pré-condições:}
         \begin{enumerate}
             \item O usuário deve estar autenticado no sistema.
+        \end{enumerate}
+    \item \textbf{Pós-condições}:
+        \begin{enumerate}
+            \item O usuário deixará de estar autenticado no sistema, voltando a ter acesso limitado às funcionalidades de EVA.
         \end{enumerate}
     \item \textbf{Requisitos funcionais:}
         \begin{enumerate}
@@ -376,9 +398,15 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
+    \item \textbf{Fluxo básico:}
+        \begin{enumerate}
+            \item O aluno envia uma mensagem textual para EVA solicitando que deseja efetuar o logout.
+            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
+            \item EVA irá desvincular o aluno de sua base de conhecimento.
+            \item O aluno passa a ser um visitante.
+            \item EVA irá informar de que o logout foi feito com sucesso.
+        \end{enumerate}
 \end{itemize}
-
-\textbf{Fluxo básico:}
 
 
 \section{Modelagem dos diálogos de EVA}
