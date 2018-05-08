@@ -285,7 +285,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 
 
 \subsubsection{UC04 - Receber auxílio na emissão de certificados}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado ao EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos pelo aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado. Existem três situações possíveis para a emissão de certificados. O primeira situação, caso o curso tenha sido concluído no ano de 2015 para frente, EVA deve orientar o aluno a emitir o certificado no ambiente https://ava.enap.gov.br. O segundo, caso o curso tenha sido concluído entre os anos de 2013 a 2014, EVA deve orientar o aluno a emitir o certificado no ambiente https://moodle23.enap.gov.br. E o último, caso o curso tenha sido concluído antes do ano de 2013, EVA deverá orientar o aluno a enviar um e-mail para ead@enap.gov.br. Além das instruções para a emissão do certificado, para os itens de cada caso, EVA deverá informar o nome do curso, carga horária, o estado em que se encontra a matrícula do aluno e o estado da turma de ensino.
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado ao EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos pelo aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado. Existem três situações possíveis para a emissão de certificados. O primeira situação, caso o curso tenha sido concluído no ano de 2015 para frente, EVA deve orientar o aluno a emitir o certificado no ambiente https://ava.enap.gov.br. O segundo, caso o curso tenha sido concluído entre os anos de 2013 a 2014, EVA deve orientar o aluno a emitir o certificado no ambiente https://moodle23.enap.gov.br. E o último, caso o curso tenha sido concluído antes do ano de 2013, EVA deverá orientar o aluno a enviar um e-mail para ead@enap.gov.br. Além das instruções para a emissão do certificado, para os itens de cada caso, EVA deverá informar o nome do curso e a carga horária.
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -315,7 +315,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
             \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
             \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá auxiliar o aluno, com base no ano de conclusão dos cursos encontrados, quais procedimentos ele deverá realizar. Para cada situação, EVA informará o nome do curso, a carga horária, o estado que se encontra a matricula do aluno e o estado da turma de ensino de cada item.
+            \item EVA irá auxiliar o aluno, com base no ano de conclusão dos cursos encontrados, quais procedimentos ele deverá realizar. Para cada situação, EVA informará o nome do curso e a carga horária de cada item.
         \end{enumerate}
     \item \textbf{Fluxo alternativo A:}
         \begin{enumerate}
@@ -327,7 +327,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 
 
 \subsubsection{UC05 - Visualizar inscrições de cursos abertos}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar quais inscrições de cursos de um aluno vinculado ao EV.G que estão em aberto. Para cada item identificado, EVA deve informar o nome do curso, a carga horária e o estado da turma. 
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar quais inscrições de cursos de um aluno vinculado ao EV.G que estão em aberto. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, estado da matricula do aluno e o estado da turma. 
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -357,7 +357,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
             \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
             \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, a carga horária e a situação da turma. 
+            \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, o estado da matrícula, a carga horária e a situação da turma. 
         \end{enumerate}
         
     \item \textbf{Fluxo alternativo A:}
@@ -411,16 +411,203 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 
 \section{Modelagem dos diálogos de EVA}
 
-Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos de um \textit{chatbot} a partir de cenários. Já na seção \ref{casos-de-uso-eva}, foram especificados e detalhados os casos de uso de EVA. Nesta seção, serão elaborados os diálogos, com base nos casos de uso de EVA, utilizando os cenários de cada um deles.
+Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos de um \textit{chatbot} a partir de cenários. Já na seção \ref{casos-de-uso-eva}, foram especificados e detalhados os casos de uso de EVA. Nesta seção, serão elaborados os diálogos, com base nos casos de uso de EVA, utilizando os cenários de cada um deles. É válido ressaltar, que existirão variações nas mensagens enviadas por EVA como resposta nos cenários especificados, porém, essas mensagens serão posteriormente cadastradas pela administração da EV.G.
 
 \subsection{Cenários}
 
-\subsubsection{Cenário UC01 - Dialogar com EVA}
-\subsubsection{Cenário UC02 - Efeuar login}
-\subsubsection{Cenário UC03 - Visualizar histórico escolar completo}
-\subsubsection{Cenário UC04 - Receber auxílio na emissão de certificados}
-\subsubsection{Cenário UC05 - Visualizar inscrições de cursos abertos}
-\subsubsection{Cenário UC06 - Efetuar logout}
+\subsubsection{Diálogo UC01 - Dialogar com EVA}
+
+\begin{itemize}
+    \item Suposição inicial:
+    
+    O usuário envia uma mensagem textual para EVA; EVA consulta sua base de conhecimento para compreender o que o ator solicita; EVA responde ao usuário.
+    
+    \begin{enumerate}
+        \item \textbf{Usuário:} Olá, quem é você?
+        \item \textbf{EVA:} Eu sou a EVA, a sua secretaria virtual da EVG. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar quais cursos estão em aberto!! Como posso lhe ser útil?
+    \end{enumerate}
+    
+    \item O que pode dar errado:
+    
+    O usuário não autenticado solicitar o uso de alguma funcionalidade restrita de EVA.
+    
+        \begin{enumerate}
+            \item \textbf{Usuário:} Informe o meu histórico escolar.
+            \item \textbf{EVA:} Você ainda não está autenticado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
+        \end{enumerate}
+    
+    O usuário solicitar algo que EVA não compreende.
+    
+        \begin{enumerate}
+            \item \textbf{Usuário:} EVA, existe vida após a morte?
+            \item \textbf{EVA:} Nossa, mil perdões, mas realmente eu não consegui entender o que você precisa.
+        \end{enumerate}
+\end{itemize}
+
+\subsubsection{Diálogo UC02 - Efetuar login}
+
+\begin{itemize}
+    \item Suposição inicial: 
+    
+        EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu CPF ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
+        
+        \begin{enumerate}
+            \item \textbf{EVA:} Você ainda não está cadastrado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
+            \item \textbf{Usuário:} test@evg.com
+            \item \textbf{EVA:} Certo.. Aguarde alguns instantes enquanto eu faço a consulta no nosso banco de dados, está bem?
+            \item \textbf{EVA:} Seja muito bem-vindo!! Eu sou a EVA, a sua assistente virtual do EV.G. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar a você quais cursos estão em aberto!! Fique a vontade, faça alguma pergunta.
+        \end{enumerate}
+    
+    \item O que pode dar errado:
+    
+        As credenciais informadas pelo usuário não conferem.
+        \begin{enumerate}
+            \item \textbf{EVA:} Ops!! Parece que os dados informados não conferem. Por favor, tente novamente.
+        \end{enumerate}
+        
+        O usuário envia uma mensagem textual que não é nada parecido com CPF ou e-mail.
+        \begin{enumerate}
+            \item \textbf{EVA:} Por favor, informe o seu e-mail ou o seu CPF. Caso você não tenha essas informações cadastradas, peço que entre em contato com a EV.G.
+        \end{enumerate}
+        
+        O usuário tentou se autenticar por três vezes consecutivas sem sucesso.
+        \begin{enumerate}
+            \item \textbf{EVA:} Infelizmente, por motivos de segurança, estaremos bloqueando suas solicitações de registro por um dia. Caso você ache que os dados inseridos estão corretos, peço que você entre em contato com o EVG. Tente novamente amanhã, desculpe o transtorno.
+        \end{enumerate}
+        
+        O usuário, já bloqueado, tenta se autenticar novamente.
+        \begin{enumerate}
+            \item \textbf{EVA:} Por motivos de segurança, você está bloqueado por um dia. Caso você ache que os dados inseridos anteriormente estejam corretos, peço que você entre em contato com o EVG. Tente novamente amanhã, desculpe o transtorno.
+        \end{enumerate}
+    
+\end{itemize}
+
+\subsubsection{Diálogo UC03 - Visualizar histórico escolar completo}
+
+\begin{itemize}
+    \item Suposição inicial:
+    
+        O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar; EVA irá consultar a base de dados da EV.G para pesquisar os dados do histórico do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA informa o histórico escolar do aluno.
+        
+        \begin{enumerate}
+            \item \textbf{Aluno:} EVA, gostaria de verificar meu histórico escolar, por favor.
+            \item \textbf{EVA:} Só um segundo.
+            \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou.
+            \item \textbf{EVA:} Curso: Informática básica; \\
+            Carga horária: 70 horas; \\
+            Situação da matrícula: Concluído; \\
+            Situação da turma: Finalizada;\\ \ldots
+        \end{enumerate}
+    
+    \item O que pode dar errado:
+    
+        O usuário não possui nenhuma inscrição nos cursos da EV.G.
+        
+        \begin{enumerate}
+            \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
+            \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+\end{enumerate}
+    
+    \item Estado do sistema na conclusão:
+    
+        Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+        
+        \begin{enumerate}
+            \item \textbf{EVA:} Deseja mais alguma coisa?
+        \end{enumerate}
+    \end{itemize}
+
+\subsubsection{Diálogo UC04 - Receber auxílio na emissão de certificados}
+
+\begin{itemize}
+    \item Suposição inicial:
+    
+        O aluno envia uma mensagem textual para EVA solicitando auxilio na emissão de certificados; EVA irá consultar a base de dados da EV.G para pesquisar os dados dos cursos concluídos do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA auxilia o aluno no processo de emissão de certificado.
+        
+        \begin{enumerate}
+            \item \textbf{Aluno:} Eu gostaria de auxílio na emissão dos meus certificados, por favor.
+            \item \textbf{EVA:} Só um segundo.
+            \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou.
+            \item \textbf{EVA:} Você finalizou o(s) seguinte(s) curso(s) no período de 2015 em diante: Empreendedorismo (CH - 50 horas) e Gestão de negócios (CH - 60 horas). \\
+            Para emitir o certificado de algum curso relacionado acima, acesse: https://ava.enap.gov.br.
+            \item \textbf{EVA:} Você finalizou o(s) seguinte(s) curso(s) no período de 2013 a 2014: Introdução a vigilância sanitária (CH - 60 horas). \\
+            Para emitir o certificado de algum curso relacionado acima, acesse: https://moodle23.enap.gov.br/.
+            \item \textbf{EVA:} Você finalizou o(s) seguinte(s) curso(s) no período anterior a 2013: Federalismo fiscal no Brasil (CH - 50 horas). \\
+            Para emitir o certificado de algum curso relacionado acima, envie um e-mail para 'ead@enap.gov.br', com o título do curso que você deseja emitir o certificado, o seu nome e CPF.
+        \end{enumerate}
+    
+    \item O que pode dar errado:
+    
+        O usuário não possui nenhuma inscrição nos cursos da EV.G.
+        
+        \begin{enumerate}
+            \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
+            \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+        \end{enumerate}
+    
+    \item Estado do sistema na conclusão:
+    
+        Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+        
+        \begin{enumerate}
+            \item \textbf{EVA:} Deseja mais alguma coisa?
+        \end{enumerate}
+\end{itemize}
+
+
+\subsubsection{Diálogo UC05 - Visualizar inscrições de cursos abertos}
+
+\begin{itemize}
+    \item Suposição inicial:
+    
+        O aluno envia uma mensagem textual para EVA solicitando a visualização dos cursos em aberto; EVA irá consultar a base de dados da EV.G para pesquisar os dados dos cursos que estão em aberto do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA informa o aluno quais são os seus cursos em aberto.
+        
+        \begin{enumerate}
+            \item \textbf{Aluno:}
+            \item \textbf{EVA:} Só um segundo.
+            \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou
+            \item \textbf{EVA:} Curso: Ética e Serviço público; \\
+            Carga horária: 20 horas; \\
+            Situação da matrícula: Em andamento; \\
+            Situação da turma: Aberto;\\ \ldots
+        \end{enumerate}
+    
+    \item O que pode dar errado:
+    
+    O usuário não possui nenhuma inscrição nos cursos da EV.G.
+    
+        \begin{enumerate}
+            \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
+            \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+        \end{enumerate}
+    
+    \item Estado do sistema na conclusão:
+    
+        Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+        
+        \begin{enumerate}
+            \item \textbf{EVA:} Deseja mais alguma coisa?
+        \end{enumerate}
+    
+\end{itemize}
+
+\subsubsection{Diálogo UC06 - Efetuar logout}
+
+\begin{itemize}
+    \item Suposição inicial:
+    
+        O aluno envia uma mensagem textual para EVA solicitando que deseja efetuar o logout no sistema.
+        
+        \begin{enumerate}
+            \item \textbf{Aluno:} EVA, gostaria de efetuar o logout.
+            \item \textbf{EVA:} Só um segundo.
+            \item \textbf{EVA:} O logout foi efetuado com sucesso. Lembre-se, sempre que desejar eu estarei por aqui, basta apenas informar o seu e-mail ou CPF. Até logo!
+        \end{enumerate}
+    
+    \item Estado do sistema na conclusão:
+    
+        O aluno deixa de estar autenticado no sistema de EVA.
+\end{itemize}
 
 
 \section{Arquitetura de EVA}
