@@ -614,15 +614,29 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
 
 Na seção ~\ref{chatbot:dev}, foram exemplificadas as duas formas utilizadas no desenvolvimento de \textit{chatbots}, que são utilizando plataformas de \textit{chatbots} ou não. Para o desenvolvimento de EVA, foi optado pela não utilização dessas plataformas. Assim, será necessário que haja uma explicação a cerca das tecnologias utilizadas, e também, da arquitetura escolhida para a sua criação.
 
-No que diz respeito a arquitetura de EVA, pode-se dizer que esta consiste em duas partes principais: a API e o \textit{chatbot} propriamente dito. Nas subções abaixo, serão detalhados as tecnologias que irão compor todo o sistema de EVA e também detalhes sobre a implementação.
+No que diz respeito a arquitetura de EVA, pode-se dizer que esta consiste em duas partes principais: a API e o \textit{chatbot} propriamente dito. Nas subseções abaixo, serão detalhados as tecnologias que irão compor todo o sistema de EVA e também detalhes sobre a implementação.
 
 \subsection{Tecnologias}
 
 Nesta subseção, serão detalhadas as principais tecnologias utilizadas em todo o desenvolvimento de EVA, tanto para a criação da API, quanto para o \textit{chatbot} propriamente dito.
 
 \subsubsection{Python}
+
+A linguagem de programação base de todo o sistema de EVA, é o Python. Numa breve descrição sobre a linguagem, pode-se citar que ela é multi paradigma, suportando o paradigma orientado a objetos, imperativo, funcional e procedural; possui também tipagem dinâmica, onde não se é necessário declarações dos tipos de dados que serão utilizados durante a programação; e também, por possuir diversos frameworks que facilitam no desenvolvimento de aplicações, no qual, para o desenvolvimento de EVA, serão utilizados dois destes.
+
+A escolha do Python como linguagem base para o desenvolvimento de EVA, se deu a partir da experiência do autor com a mesma, e também, pela liberdade de escolha por parte da EV.G.
+
 \subsubsection{Django}
+
+Para a implementação da API, que será detalhada mais adiante, foi utilizado o framework Django.
+
 \subsubsection{Wit.ai}
+
+Por se tratar de um \textit{chatbot} de domínio amplo, o sistema de EVA necessariamente precisa utilizar de algum recurso de IA, como abordado na seção \ref{cap:02:sec:01:sub:02:bot-dominio}. Para isso, pode-se utilizar técnicas de Aprendizagem de Máquina, descrita na seção \ref{cap:02:sec:02:sub:machine-learning} ou PLN, descrita na seção \ref{cap:02:sec:02:sub:pln}.
+Para o desenvolvimento de EVA, fará-se uso da técnica de PLN. Para isso, serão utilizados os serviços oferecidos pelo Wit.ai.
+
+ Wit.ai é uma plataforma de desenvolvimento de PLN gratuita que transforma a linguagem natural (fala ou escrita) em dados estruturados. É válido ressaltar também, que o Wit.ai oferece uma biblioteca para a utilização dos seus serviços em Python, sendo este, um dos principais motivos para a sua escolha.
+
 \subsubsection{Telegram-bot-api}
 
 
