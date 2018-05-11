@@ -135,7 +135,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 \begin{figure}
     \centering
     \includegraphics[width=0.3\linewidth]{src/imagens/CasoDeUsoEva.png}
-    \caption{Fonte: Elaborado pelo autor (2018)}
+    \caption{Casos de uso - EVA. Fonte: Elaborado pelo autor (2018)}
     \label{cap:03:fig:diagrama}
 \end{figure}
 
@@ -638,18 +638,40 @@ Para o desenvolvimento de EVA, fará-se uso da técnica de PLN. Porém, para se 
 
 Django é um framework gratuito e de código aberto para a criação de aplicações web, escrito em Python. Por ser um framework web, Django possui um conjunto de componentes que ajudam a desenvolver aplicações web de maneira simples e rápida.
 
-Ele será utilizado para criar a API de EVA, na qual esta terá duas principais funções no sistema como um todo. A primeira, será armazenar a base de dados dos alunos da EV.G, para que se possa consultar as informações escolares dos alunos que estiverem se comunicando com EVA. A segunda, é que a API estará responsável também por estabelecer uma interoperabilidade com o serviço de PNL fornecido pelo Wit.ai, para que possa compreender a mensagem do usuário, e atende-lo de maneira eficiente.
+Ele será utilizado para criar a API de EVA, na qual esta terá duas principais funções no sistema como um todo. A primeira, será armazenar a base de dados dos alunos da EV.G, para que se possa consultar as informações escolares dos alunos que estiverem se comunicando com o \textit{chatbot}. A segunda, é que a API estará responsável também por estabelecer uma interoperabilidade com o serviço de PNL fornecido pelo Wit.ai, para que possa compreender a mensagem textual enviada pelo usuário, e atende-lo de maneira eficiente.
 
 \subsubsection{Python-telegram-bot}
 
 Como EVA irá atender as solicitações dos alunos vinculados ao EV.G pelo Telegram, será necessário que haja uma forma de integração do \textit{chatbot} com este \textit{messenger}. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
 
-Como o Python é a linguagem de programação base do sistema de EVA, e para facilitar a ainda mais a integração do sistema com o Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca fornece uma interface de fácil acesso, em Python, aos recursos fornecidos pelo Telegram Bot API, se tornando uma solução ideal para a construção do sistema de EVA.
+Como o Python é a linguagem de programação base do sistema de EVA, e para facilitar ainda mais a integração do sistema com o Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca fornece uma interface de fácil acesso, em Python, aos recursos fornecidos pelo Telegram Bot API, se tornando uma solução ideal para a construção do sistema de EVA.
 
 \subsection{Arquitetura da API}
 
-O acrônimo API que provém do inglês Application Programming Interface (Em português, significa Interface de Programação de Aplicações), trata-se de um conjunto de rotinas e padrões estabelecidos e documentados por uma aplicação A, para que outras aplicações consigam utilizar as funcionalidades desta aplicação A, sem precisar conhecer detalhes da implementação do software.
+Como dito no começo desta seção, o sistema de EVA é divido em duas partes principais, a API e o \textit{chatbots} propriamente dito. Nesta subseção, será explicado como funcionará a API de EVA.
 
-Desta forma, entendemos que as APIs permitem uma interoperabilidade entre aplicações. Em outras palavras, a comunicação entre aplicações e entre os usuários.
+O acrônimo API que provém do inglês Application Programming Interface (Em português, significa Interface de Programação de Aplicações), trata-se de um conjunto de rotinas e padrões estabelecidos e documentados por uma aplicação, para que outras aplicações consigam utilizar as funcionalidades desta, sem precisar conhecer detalhes da implementação do software. Desta forma, as APIs permitem uma interoperabilidade entre aplicações.
+
+A API de EVA será desenvolvida utilizando o framework Django e terá duas principais funções no sistema como um todo. A primeira, será armazenar a base de dados dos alunos vinculados ao EV.G, para que se possa consultar as informações escolares dos alunos que estiverem se comunicando com o \textit{chatbot}. A segunda, é que a API estará responsável também, por estabelecer uma interoperabilidade com o serviço de PNL fornecido pelo Wit.ai, para que possa compreender a mensagem textual enviada pelo usuário e atende-lo da maneira devida. Para melhor exemplificar como funcionará a API de EVA, na Figura \ref{cap:03:fig:diagrama-sequencia-1} está apresentado o diagrama de sequência da mesma.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{src/imagens/EVAAPISEQUENCE.png}
+    \caption{Diagrama de sequência da API de EVA. Fonte: Elaborado pelo autor (2018)}
+    \label{cap:03:fig:diagrama-sequencia-1}
+\end{figure}
 
 \subsection{Arquitetura do \textit{chatbot}}
+
+Nesta subseção, será explicado como funcionará a o \textit{chatbot} de EVA.
+
+Na seção \ref{cap:02:sec:03:sub:chatbotsmessenger}, foi detalhado como funcionam os \textit{chatbots} em plataformas de mensagens instantâneas. Lá foi explicado que alguns desses \textit{messengers} oferecem ferramentas e suporte, sob licenças específicas, para o desenvolvimento de \textit{chatbots} em sua plataforma, por meio de APIs. Como é um requisito essencial que EVA atenda as demandas dos usuários através do Telegram, será necessário que haja uma comunicação entre o sistema de EVA com a API do mesmo. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
+
+Para facilitar, em termos de desenvolvimento, a criação do \textit{chatbot} e integração com a Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca oferece uma interface, em Python, de fácil acesso aos recursos oferecidos pelo Telegram Bot API. FALAR SOBRE A FUNÇÂO GETUPDATE E COMO ELA FUNCIONA.
+
+É válido enfatizar que este \textit{chatbot} de EVA é apenas uma das partes do sistema como um todo. Basicamente, a função deste é enviar a mensagem textual do aluno para a API de EVA e retornar ao aluno a resposta, com base no que foi compreendido, da API de EVA. Para melhor detalhar o fluxo de interações, na Figura \ref{cap:03:fig:diagrama-sequencia-2} é apresentado o diagrama de sequência do \textit{chatbot} de EVA.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{src/imagens/EVACHATBOTSEQUENCE.png}
+    \caption{Diagrama de sequência do \textit{chatbot} de EVA. Fonte: Elaborado pelo autor (2018)}
+    \label{cap:03:fig:diagrama-sequencia-2}
+\end{figure}
