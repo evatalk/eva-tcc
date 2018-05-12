@@ -135,7 +135,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 \begin{figure}
     \centering
     \includegraphics[width=0.3\linewidth]{src/imagens/CasoDeUsoEva.png}
-    \caption{Casos de uso - EVA. Fonte: Elaborado pelo autor (2018)}
+    \caption{Casos de uso - EVA} Fonte: Elaborado pelo autor (2018)
     \label{cap:03:fig:diagrama}
 \end{figure}
 
@@ -614,7 +614,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
 
 Na seção ~\ref{chatbot:dev}, foram exemplificadas as duas formas utilizadas no desenvolvimento de \textit{chatbots}, que são utilizando plataformas de \textit{chatbots} ou não. Para o desenvolvimento de EVA, foi optado pela não utilização dessas plataformas. Assim, será necessário que haja uma explicação a cerca das tecnologias utilizadas, e também, da arquitetura escolhida para a sua criação.
 
-No que diz respeito a arquitetura de EVA, pode-se dizer que esta consiste em duas partes principais: a API e o \textit{chatbot} propriamente dito. Nas subseções abaixo, serão detalhados as tecnologias que irão compor todo o sistema de EVA e também detalhes sobre a sua implementação.
+No que diz respeito a arquitetura de EVA, pode-se dizer que esta consiste em duas partes principais: a API e o \textit{chatbot} propriamente dito. A escolha desta divisão, está diretamente ligada ao fato de que o sistema, no futuro, tende a continuar crescendo, seja atendendo em outras plataformas de mensagens ou adicionando novas funcionalidades ao sistema de EVA. Em outras palavras, essa arquitetura tem como objetivo tornar o sistema mais escalável. Nas subseções abaixo, serão detalhados as tecnologias que irão compor todo o sistema de EVA e também detalhes sobre a sua implementação.
 
 \subsection{Tecnologias}
 
@@ -632,7 +632,7 @@ Por se tratar de um \textit{chatbot} de domínio amplo, o sistema de EVA necessa
 
 Para o desenvolvimento de EVA, fará-se uso da técnica de PLN. Porém, para se abstrair da necessidade de aprender todo o processo de desenvolvimento de algoritmos de PLN, serão utilizados os serviços oferecidos pelo Wit.ai.
 
- Wit.ai é uma plataforma de desenvolvimento de PLN gratuita que transforma a linguagem natural (fala ou escrita) em dados estruturados. É válido ressaltar também, que o Wit.ai oferece uma biblioteca para a utilização dos seus serviços em Python, sendo este, um dos principais motivos para a sua escolha.
+ Wit.ai é uma plataforma de desenvolvimento de PLN gratuita que transforma a linguagem natural (fala ou escrita) em dados estruturados (intenções). É válido ressaltar também, que o Wit.ai oferece uma biblioteca para a utilização dos seus serviços em Python, sendo este, um dos principais motivos para a sua escolha.
 
 \subsubsection{Django}
 
@@ -652,26 +652,30 @@ Como dito no começo desta seção, o sistema de EVA é divido em duas partes pr
 
 O acrônimo API que provém do inglês Application Programming Interface (Em português, significa Interface de Programação de Aplicações), trata-se de um conjunto de rotinas e padrões estabelecidos e documentados por uma aplicação, para que outras aplicações consigam utilizar as funcionalidades desta, sem precisar conhecer detalhes da implementação do software. Desta forma, as APIs permitem uma interoperabilidade entre aplicações.
 
-A API de EVA será desenvolvida utilizando o framework Django e terá duas principais funções no sistema como um todo. A primeira, será armazenar a base de dados dos alunos vinculados ao EV.G, para que se possa consultar as informações escolares dos alunos que estiverem se comunicando com o \textit{chatbot}. A segunda, é que a API estará responsável também, por estabelecer uma interoperabilidade com o serviço de PNL fornecido pelo Wit.ai, para que possa compreender a mensagem textual enviada pelo usuário e atende-lo da maneira devida. Para melhor exemplificar como funcionará a API de EVA, na Figura \ref{cap:03:fig:diagrama-sequencia-1} está apresentado o diagrama de sequência da mesma.
+A API de EVA será desenvolvida utilizando o framework Django, e terá duas principais funções no sistema como um todo. A primeira, será que a API estará responsável por estabelecer uma interoperabilidade com o serviço de PNL fornecido pelo Wit.ai, para que possa compreender as mensagens textuais enviadas pelos alunos que estiverem se comunicando com o \textit{chatbot} de EVA. A segunda, será que a partir da intenção da mensagem, analisada e estruturada pelo Wit.ai, será elaborada a devida resposta e enviada de volta ao \textit{chatbot} de EVA.
+
+É válido informar também, que a base de dados das informações escolares dos alunos vinculados ao EV.G, estará atrelada à própria API de EVA, sendo assim, não será necessário que haja uma comunicação com algum serviço externo da EV.G, para que se possa consultar tais informações.
+
+Para melhor exemplificar como funcionará a API de EVA, na Figura \ref{cap:03:fig:diagrama-sequencia-1} está apresentado o diagrama de sequência da mesma.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{src/imagens/EVAAPISEQUENCE.png}
-    \caption{Diagrama de sequência da API de EVA. Fonte: Elaborado pelo autor (2018)}
+    \caption{Diagrama de sequência da API de EVA} Fonte: Elaborado pelo autor (2018)
     \label{cap:03:fig:diagrama-sequencia-1}
 \end{figure}
 
 \subsection{Arquitetura do \textit{chatbot}}
 
-Nesta subseção, será explicado como funcionará a o \textit{chatbot} de EVA.
+Nesta subseção, será explicado como funcionará o \textit{chatbot} de EVA. Na seção \ref{cap:02:sec:03:sub:chatbotsmessenger}, foi detalhado como funcionam os \textit{chatbots} em plataformas de mensagens instantâneas. Lá foi explicado que alguns desses \textit{messengers} oferecem ferramentas e suporte, sob licenças específicas, para o desenvolvimento de \textit{chatbots} em sua plataforma, por meio de APIs. Como é um requisito essencial que EVA atenda as demandas dos usuários através do Telegram, será necessário que haja uma comunicação entre o sistema de EVA com a API do mesmo. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
 
-Na seção \ref{cap:02:sec:03:sub:chatbotsmessenger}, foi detalhado como funcionam os \textit{chatbots} em plataformas de mensagens instantâneas. Lá foi explicado que alguns desses \textit{messengers} oferecem ferramentas e suporte, sob licenças específicas, para o desenvolvimento de \textit{chatbots} em sua plataforma, por meio de APIs. Como é um requisito essencial que EVA atenda as demandas dos usuários através do Telegram, será necessário que haja uma comunicação entre o sistema de EVA com a API do mesmo. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
+Para facilitar, em termos de desenvolvimento, a criação do \textit{chatbot} e integração com a Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca oferece uma interface, em Python, de fácil acesso aos recursos oferecidos pelo Telegram Bot API.
 
-Para facilitar, em termos de desenvolvimento, a criação do \textit{chatbot} e integração com a Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca oferece uma interface, em Python, de fácil acesso aos recursos oferecidos pelo Telegram Bot API. FALAR SOBRE A FUNÇÂO GETUPDATE E COMO ELA FUNCIONA.
+Na implementação do código do \textit{chatbot} de EVA, utilizando a biblioteca Python-telegram-bot, foi desenvolvido uma sub-rotina, que confere constantemente se há novas mensagens enviadas por algum usuário no \textit{messenger}. Caso haja, esta mensagem será enviada para a API de EVA para que possa ser compreendida e tratada de maneira devida. Quando a resposta for retornada, esta será formatada, para que então, possa ser enviada ao usuário no Telegram.
 
-É válido enfatizar que este \textit{chatbot} de EVA é apenas uma das partes do sistema como um todo. Basicamente, a função deste é enviar a mensagem textual do aluno para a API de EVA e retornar ao aluno a resposta, com base no que foi compreendido, da API de EVA. Para melhor detalhar o fluxo de interações, na Figura \ref{cap:03:fig:diagrama-sequencia-2} é apresentado o diagrama de sequência do \textit{chatbot} de EVA.
+Resumidamente, esta parte do sistema de EVA será responsável por verificar se há novas mensagens enviada pelos usuários, estabelecer uma interoperabilidade com a API de EVA para que se possa analisar, compreender e atender as mensagens que foram enviadas pelos usuários, e por fim, formatar e enviar a mensagem de resposta ao usuário no Telegram. Para melhor detalhar o fluxo de interações, na Figura \ref{cap:03:fig:diagrama-sequencia-2} é apresentado o diagrama de sequência do \textit{chatbot} de EVA.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{src/imagens/EVACHATBOTSEQUENCE.png}
-    \caption{Diagrama de sequência do \textit{chatbot} de EVA. Fonte: Elaborado pelo autor (2018)}
+    \caption{Diagrama de sequência do \textit{chatbot} de EVA} Fonte: Elaborado pelo autor (2018)
     \label{cap:03:fig:diagrama-sequencia-2}
 \end{figure}
