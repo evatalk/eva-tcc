@@ -45,7 +45,7 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
 \end{tabular}
 \end{table}
 
-\subsection{Requisitos não funcionais}
+\subsection{Requisitos não funcionais}\label{cap3-requisitos-nao-funcionais}
 
 Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
 
@@ -98,7 +98,6 @@ Um ator é algo com comportamento, tal como uma pessoa (identificada por seu pap
 \end{tabular}
 \end{table}
 
-
 \subsection{Especificação dos casos de uso}
 
 Como dito no começo desta seção, casos de uso permitem definir as funções de aplicação que o sistema deverá oferecer para o usuário. A partir dos requisitos funcionais identificados para EVA, foram extraídos os casos de uso especificados na Tabela \ref{tabela:tabela4}.
@@ -132,14 +131,15 @@ Como dito no começo desta seção, casos de uso permitem definir as funções d
 Para descrever de forma visual e clara como se dará o vínculo entre os atores e os casos de uso identificados de EVA, foi criado um diagrama de casos de uso. Para a criação deste, foi utilizada a notação UML.
 
 Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso, que são as possíveis interações que poderão ser realizadas, é representada por uma elipse. As linhas fazem a ligação entre os atores e as interações. Na Figura \ref{cap:03:fig:diagrama}, está representado o diagrama de casos de uso de EVA.
-\begin{figure}
+
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.3\linewidth]{src/imagens/CasoDeUsoEva.png}
     \caption{Casos de uso - EVA} Fonte: Elaborado pelo autor (2018)
     \label{cap:03:fig:diagrama}
 \end{figure}
 
-\subsection{Detalhamento dos casos de uso}
+\subsection{Detalhamento dos casos de uso}\label{cap3-detalhamento-casos-de-uso}
 
 \subsubsection{UC01 - Dialogar com EVA}
 \textbf{Descrição:} Este caso de uso especifica a ação principal de interação do usuário com o \textit{chatbot}, que é o diálogo. Por meio de mensagens textuais na língua portuguesa, o usuário poderá interagir com EVA e ter acesso à as suas funcionalidades. O nível de funcionalidades disponíveis para acesso do usuário, será determinada pelo fato dele estar autenticado ou não no sistema.
@@ -657,7 +657,7 @@ A API de EVA será desenvolvida utilizando o framework Django, e terá duas prin
 É válido informar também, que a base de dados das informações escolares dos alunos vinculados ao EV.G, estará atrelada à própria API de EVA, sendo assim, não será necessário que haja uma comunicação com algum serviço externo da EV.G, para que se possa consultar tais informações.
 
 Para melhor exemplificar como funcionará a API de EVA, na Figura \ref{cap:03:fig:diagrama-sequencia-1} está apresentado o diagrama de sequência da mesma.
-\begin{figure}
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.7\linewidth]{src/imagens/EVAAPISEQUENCE.png}
     \caption{Diagrama de sequência da API de EVA} Fonte: Elaborado pelo autor (2018)
@@ -673,7 +673,7 @@ Para facilitar, em termos de desenvolvimento, a criação do \textit{chatbot} e 
 Na implementação do código do \textit{chatbot} de EVA, utilizando a biblioteca Python-telegram-bot, foi desenvolvido uma sub-rotina, que confere constantemente se há novas mensagens enviadas por algum usuário no \textit{messenger}. Caso haja, esta mensagem será enviada para a API de EVA para que possa ser compreendida e tratada de maneira devida. Quando a resposta for retornada, esta será formatada, para que então, possa ser enviada ao usuário no Telegram.
 
 Resumidamente, esta parte do sistema de EVA será responsável por verificar se há novas mensagens enviada pelos usuários, estabelecer uma interoperabilidade com a API de EVA para que se possa analisar, compreender e atender as mensagens que foram enviadas pelos usuários, e por fim, formatar e enviar a mensagem de resposta ao usuário no Telegram. Para melhor detalhar o fluxo de interações, na Figura \ref{cap:03:fig:diagrama-sequencia-2} é apresentado o diagrama de sequência do \textit{chatbot} de EVA.
-\begin{figure}
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.7\linewidth]{src/imagens/EVACHATBOTSEQUENCE.png}
     \caption{Diagrama de sequência do \textit{chatbot} de EVA} Fonte: Elaborado pelo autor (2018)
