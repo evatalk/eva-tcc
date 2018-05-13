@@ -1,0 +1,70 @@
+% Introducao
+\chapter{Introdução}\label{cap:01:introducao}
+
+A Escola Virtual do Governo (\abrv[Escola Virtual do Governo]{EV.G}) foi pensada como uma das iniciativas criadas pela Escola Nacional de Administração Pública (\abrv[Escola Nacional de Administração]{ENAP}), junto a escolas de governo e outras instituições parceiras.
+Esta iniciativa consiste em um portal único para oferta de capacitação a distância voltado a servidores públicos e cidadãos de todo o país.
+A EV.G oferece cursos a distância de diferentes instituições e com diferentes temáticas ligadas à administração pública e a cidadania, viabilizando o desafio de contribuir para a formação e o desenvolvimento de milhares de servidores públicos bem como dos cidadãos.
+
+Ao final de 2017, a EV.G alcançou um quantitativo de 358 mil matrículas, um aumento de 70,65\% em relação ao ano anterior~\cite{EVGnumeros}.
+Contudo, o EV.G ainda não dispõe de um central de atendimento aos alunos propriamente dita, e em ambientes de oferta massiva de cursos, o atendimento ao usuário pode ser considerado um diferencial competitivo.
+Em uma publicação recente, o SEBRAE estima que o custo mínimo de criação de uma central de atendimento em uma empresa com cinco estações de trabalho, estabelecida em uma área de 50 metros quadrados, exige um investimento inicial estimado em torno de R\$ 55 mil \cite{SebraeCallCenter}.
+Sem acrescentar o custo e esforço de manter o atendimento por 24 horas/dia para atender toda e qualquer demanda solicitada pelos alunos vinculados a EV.G.
+
+Com o avanço tecnológico, soluções inovadoras e de baixo custo estão surgindo a todo momento.
+No cenário do atendimento on-line, o uso de \textit{chatbots} é uma opção de baixo custo e alto desempenho \cite{CallCenterInf}.
+Como tal, o \textit{chatbot} é uma solução possível para atendimento massificado via algum método de conversação, como por exemplo em aplicações de mensagens instantâneas.
+Em teoria, o \textit{chatbot} não tem limite de atendimento simultâneo de alunos, nem tão pouco de horário de atendimento, por ser um programa de computador.
+% O limitante é quanto tempo o servidor esta online e quanto de processamento ele suporta.
+O que torna ideal para atendimento em ambiente virtual de aprendizagem de alta disponibilidade.
+
+Nesse contexto de atendimento massivo e na dificuldade de construir e manter uma central de atendimento, foi desenvolvido um \textit{chatbot} de conversação textual para a plataforma mensagens instantâneas chamada  Telegram, denominado de \abrv[EV.G Virtual Assistant]{EVA} (EV.G \textit{Virtual Assistant}).
+O objetivo geral de EVA é ter a capacidade de conversar via texto com alunos da EV.G no atendimento administrativo de uma secretaria acadêmica.
+
+
+\section{Objetivos}\label{cap:01:sec:01:objetivos}
+
+Nesta seção são definidos os objetivos gerais e específicos do trabalho.
+
+
+\subsection{Objetivos Gerais}\label{cap:01:sec:01:sub:01:objetivo-geral}
+
+É objetivo geral deste, o desenvolvimento do \textit{chatbot} EVA, capaz de interagir com os alunos vinculados ao EV.G, na medida de suas necessidades, via mecanismo de conversação textual.
+
+
+\subsection{Objetivos Específicos}\label{cap:01:sec:01:sub:02:ojetivos-especificos}
+
+Fazem parte dos objetivos específicos:
+
+\begin{itemize}
+    \item Especificação dos principais requisitos do projeto.
+    \item Desenvolvimento de uma \abrv[Application Programming Interface]{API} para EVA.
+    \item Projeto e implementação dos diálogos de EVA.
+    \item Desenvolvimento do \textit{chatbot} EVA na plataforma de mensagens instantâneas Telegram.
+\end{itemize}
+
+
+\section{Metodologia}\label{cap:01:sec:02:metodologia}
+
+\todo{MINORA Ler e revisar}
+Devido ao fato do trabalho estar atrelado ao desenvolvimento de um software, este será dividido em três etapas. 
+Na primeira delas, serão realizadas explicações a cerca do tema principal deste trabalho, nesse caso, o \textit{chatbot}. Para isso, será necessário definir o que são \textit{chatbots}, como eles funcionam e como podem ser desenvolvidos.
+
+Na segunda etapa, serão abordadas as necessidades da EV.G, no que se diz respeito ao atendimento ao cliente, para que se possa projetar um \textit{chatbot} que atenda as suas principais demandas.
+
+Por último, serão relatados os processos utilizados para o desenvolvimento do \textit{chatbot} da EV.G. Para isso, será necessário descrever quais são os requisitos funcionais e não-funcionais identificados, como foi estabelecida a validação da arquitetura de desenvolvimento, a elaboração os diálogos que serão utilizados pelo \textit{chatbot}, chegando até a adesão deste pela EV.G.
+
+
+\section{Delimitações do trabalho}\label{cap:01:sec:03:delimitacao}
+
+É válido ressaltar algumas delimitações deste trabalho:
+
+\begin{itemize}
+    \item Os diálogos serão apenas para o aluno em atendimento de uma secretaria acadêmica. Os diálogos de tutoria não fazem parte deste trabalho.
+    \item Será desenvolvido o \textit{chatbot} na plataforma de mensagens instantâneas Telegram. As demais plataformas não fazem parte do escopo deste trabalho.
+    \item Conversação via texto. As outras formas de conversação não fazem parte deste.
+\end{itemize}
+
+
+\section{Organização do trabalho}
+
+Este trabalho esta organizado da seguinte forma: capítulo \ref{cap:01:introducao} é esta introdução que tem por objetivo contextualizar o leitor; o capítulo \ref{cap:02:referencial} contém o referencial teórico deste trabalho descrevendo o ambiente de construção de \textit{chatbots}.
