@@ -7,16 +7,22 @@ A EVA (EV.G Virtual Assistant) é um \textit{chatbot} de domínio amplo que ser�
 Ela irá atender tais solicitações via mecanismo de conversação textual na plataforma de mensagens instantâneas chamada Telegram, no atendimento administrativo de uma secretaria acadêmica.
 
 Por meio de EVA, os alunos vinculados ao EV.G poderão usufruir de várias funcionalidades.
-Eles irão gerenciar seus cursos visualizando o andamento das inscrições, terão acesso ao catálogo unificado, calendário de turmas, histórico escolar e também serão auxiliados no processo de emissão de certificado. Tudo por meio de um acesso único e simplificado.
+Eles irão gerenciar seus cursos visualizando o andamento das inscrições, 
+terão acesso ao catálogo unificado, calendário de turmas, histórico escolar, 
+e também, serão auxiliados no processo de emissão de certificado. 
+Tudo por meio de um acesso único e simplificado.
 
 \section{Detalhamento dos requisitos de EVA}\label{especificacao-requisitos-eva}
 
-Como dito \ref{cap:02:sec:05:projeto}, modelar o domínio de aplicação de um \textit{chatbot} é uma atividade de importante, pois, a partir desta atividade, pode se compreender a necessidade do sistema a ser construído, e também, definir os requisitos que o tornam útil.
-É interessante deixar claro, que todo o processo de levantamento e validação dos requisitos foi realizado e entregue por parte da EV.G. Assim, não haverá nenhuma seção que aborde como se deu tal levantamento. Ao invés disso, os requisitos de EVA serão apenas detalhados nas subseções a seguir.
+Como dito \ref{cap:02:sec:05:projeto}, modelar o domínio de aplicação de um \textit{chatbot} é uma atividade importante, pois a partir desta, pode se compreender a necessidade do sistema a ser construído, e também, definir os requisitos que o tornam útil.
+É interessante deixar claro, que todo o processo de levantamento e validação dos requisitos já foi realizado e entregue por parte da EV.G. 
+Assim, não haverá nenhuma seção que aborde como se deu tal levantamento. 
+Ao invés disso, os requisitos de EVA serão apenas detalhados nas subseções a seguir.
 
 \subsection{Requisitos funcionais}
 
-Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais elencados para o sistema de EVA.
+Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos funcionais de um sistema. 
+Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais elencados para o sistema de EVA.
 
 \begin{table}[htb]
 \caption{Detalhamento de requisitos funcionais de EVA}
@@ -47,7 +53,8 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
 
 \subsection{Requisitos não funcionais}\label{cap3-requisitos-nao-funcionais}
 
-Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
+Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. 
+Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
 
 \begin{table}[htb!]
 \caption{Detalhamento de requisitos não funcionais de EVA}
@@ -70,17 +77,26 @@ Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o
    \hline
     RNF06 & Implementação & O sistema deverá ser implementado utilizando a linguagem de programação Python. \\
    \hline
+    RNF07 & Autenticação & A autenticação será pela confirmação de dados pessoais, neste caso pelo email e/ou CPF cadastrado. \\
+   \hline
    
 \end{tabular}
 \end{table}\label{tabela:3}
 
 \section{Casos de uso de EVA}\label{casos-de-uso-eva}
 
-Na seção \ref{texto:especificando-com-casos-de-uso}, foi descrito o que são casos de uso e como eles normalmente são utilizados durante o projeto de um sistema. Elaborar os casos de uso permite definir quais funções de aplicação que o sistema deverá oferecer ao usuário~\cite{ReqJair}. Para a sua especificação, serão utilizados também alguns dos requisitos funcionais e não funcionais, que foram detalhados na seção \ref{especificacao-requisitos-eva}, para que se possa descrever as funcionalidades do sistema com ainda mais propriedade. Nas subseções a seguir, será realizado todo o processo de especificação e detalhamento dos casos de uso de EVA.
+Na seção \ref{texto:especificando-com-casos-de-uso}, foi descrito o que são casos de uso e como eles normalmente são utilizados durante o projeto de um sistema. 
+Elaborar os casos de uso permite definir quais funções de aplicação que o sistema deverá oferecer ao usuário~\cite{ReqJair}. 
+Para a sua especificação, serão utilizados também alguns dos requisitos funcionais e não funcionais, que foram detalhados na seção \ref{especificacao-requisitos-eva}, para que se possa descrever as funcionalidades do sistema com ainda mais propriedade. 
+Nas subseções a seguir, será realizado todo o processo de especificação e detalhamento dos casos de uso de EVA.
 
 \subsection{Especificação dos atores}
 
-Um ator é algo com comportamento, tal como uma pessoa (identificada por seu papel), um sistema ou uma organização~\cite{CraigLarman}. No que se diz respeito a EVA, foram identificados como atores o Visitante e o Aluno. Ambos poderão interagir com EVA, por meio de mensagens textuais, porém com as devidas restrições. É válido ressaltar, que a EVA não entra como ator, já que será o próprio sistema na qual está sendo modelando. Na Tabela \ref{tabela:tabela3} os atores são especificados.
+Um ator é algo com comportamento, tal como uma pessoa (identificada por seu papel), um sistema ou uma organização~\cite{CraigLarman}. 
+No que se diz respeito a EVA, foram identificados como atores o Visitante e o Aluno. 
+Ambos poderão interagir com EVA, por meio de mensagens textuais, porém com as devidas restrições. 
+É válido ressaltar, que a EVA não entra como ator, já que será o próprio sistema na qual está sendo modelando. 
+Na Tabela \ref{tabela:tabela3} os atores são especificados.
 
 \begin{table}[htb!]
 \caption{Especificação dos atores do sistema de EVA}
@@ -449,7 +465,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
 \begin{itemize}
     \item Suposição inicial: 
     
-        EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu CPF ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
+        EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu \abrv[CPF - Cadastro de Pessoas Físicas]{CPF} ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
         
         \begin{enumerate}
             \item \textbf{EVA:} Você ainda não está cadastrado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
