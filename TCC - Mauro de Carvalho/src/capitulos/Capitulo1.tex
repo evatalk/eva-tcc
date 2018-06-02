@@ -1,24 +1,32 @@
 % Introducao
 \chapter{Introdução}\label{cap:01:introducao}
 
-A Escola Virtual de Governo (\abrv[EV.G - Escola Virtual do Governo]{EV.G}) foi pensada como uma das iniciativas criadas pela Escola Nacional de Administração Pública (\abrv[ENAP - Escola Nacional de Administração Pública]{ENAP}), junto a escolas de governo e outras instituições parceiras.
+A Escola Virtual de Governo (\abrv[EV.G - Escola Virtual de Governo]{EV.G}) é uma iniciativa da Escola Nacional de Administração Pública (\abrv[ENAP - Escola Nacional de Administração Pública]{ENAP}), junto a escolas de governo e outras instituições parceiras.
 Esta iniciativa consiste em um portal único para oferta de capacitação a distância voltado a servidores públicos e cidadãos de todo o país.
-A EV.G oferece cursos a distância de diferentes instituições e com diferentes temáticas ligadas à administração pública e a cidadania, viabilizando o desafio de contribuir para a formação e o desenvolvimento de milhares de servidores públicos bem como dos cidadãos.
+A EV.G oferece cursos a distância de diferentes instituições e em diferentes temáticas ligadas à administração pública e à cidadania, viabilizando o desafio de contribuir para a formação e o desenvolvimento de milhares de servidores públicos bem como dos cidadãos.
 
-Ao final de 2017, a EV.G alcançou um quantitativo de 358 mil matrículas, um aumento de 70,65\% em relação ao ano anterior~\cite{EVGnumeros}.
-Contudo, o EV.G ainda não dispõe de um central de atendimento aos alunos propriamente dita, e em ambientes de oferta massiva de cursos, o atendimento ao usuário pode ser considerado um diferencial competitivo.
-Em uma publicação recente, o SEBRAE estima que o custo mínimo de criação de uma central de atendimento em uma empresa com cinco estações de trabalho, estabelecida em uma área de 50 metros quadrados, exige um investimento inicial estimado em torno de R\$ 55 mil \cite{SebraeCallCenter}.
-Sem acrescentar o custo e esforço de manter o atendimento por 24 horas/dia para atender toda e qualquer demanda solicitada pelos alunos vinculados a EV.G.
+A EV.G surge no âmbito de uma tendência mundial de ampliação da oferta de cursos a distância em um modelo que ficou conhecido como MOOC (Massive Open Online Courses). Apesar das controvérsias a respeito desse modelo de oferta de cursos a distância, ele influenciou grandes iniciativas de ampliação e abertura de cursos, o que permitiu o acesso gratuito a milhões de alunos a conteúdos antes restritos. Plataformas pioneiras internacionais, como Coursera, edX, e outras brasileiras, como Veduca, democratizaram a oferta de conteúdos de universidades renomadas como Harvard, Stanford, Universidade de São Paulo, entre outras. Passaram a lidar com cenários de oferta a milhões de alunos. 
+
+Para se ter uma ideia deste fenômeno, em 2017, a Escola Virtual Enap alcançou um quantitativo de 358 mil matrículas, um aumento de 70,65\% em relação ao ano anterior~\cite{EVGnumeros}.
+Com o lançamento da EV.G em 2018, e a oferta dos cursos em formato, a expectativa é que este número cresça ainda mais.
+Contudo, apesar do foco na oferta massiva de cursos, em que o atendimento ao usuário pode ser considerado um diferencial competitivo, o EV.G ainda não dispõe de um central de atendimento aos alunos propriamente dita.
+
+Proporcionalmente ao aumento de matrículas, crescem também as demandas de atendimento dos alunos. Oferecer um serviço massivo sem a devida capacidade de atendimento aos usuários representa um risco para a qualidade e a sustentabilidade do serviço prestado. De um lado, tem-se a insatisfação dos usuários causada pela falta de atendimento, e, de outro, a incapacidade do provedor de colher informações que são estratégicas para a melhoria contínua dos serviços e para a tomada de decisão.
+
+Para dar conta desses novos modelos de prestação de serviços baseados em grande quantidade, o atendimento a usuário vem evoluindo de modelos mais personalizados para modelos mais massivos de atendimento. Os modelos personalizados continuam ainda sendo diferencial competitivo de serviços que buscam atender públicos exclusivos, como é o caso da segmentação de públicos oferecida pelos bancos em geral, mas a busca pela automatização do atendimento, com vistas a agilizar o tempo de resposta e reduzir os custos, é uma tendência geral, inclusive no âmbito de contextos de atendimento mais personalizados. 
+
+Em uma publicação recente, o SEBRAE estimou que o custo mínimo de criação de uma central de atendimento em uma empresa com cinco estações de trabalho, estabelecida em uma área de 50 metros quadrados, exige um investimento inicial estimado em torno de R\$ 55 mil \cite{SebraeCallCenter}.
+Sem acrescentar o custo e esforço de manter o atendimento por 24 horas/dia para atender demandas de serviços oferecidos de forma ininterrupta, como é o caso da EV.G
 
 Com o avanço tecnológico, soluções inovadoras e de baixo custo estão surgindo a todo momento.
 No cenário do atendimento on-line, o uso de \textit{chatbots} é uma opção de baixo custo e alto desempenho \cite{CallCenterInf}.
 Como tal, o \textit{chatbot} é uma solução possível para atendimento massificado via algum método de conversação, como por exemplo em aplicações de mensagens instantâneas.
 Em teoria, o \textit{chatbot} não tem limite de atendimento simultâneo de alunos, nem tão pouco de horário de atendimento, por ser um programa de computador.
-% O limitante é quanto tempo o servidor esta online e quanto de processamento ele suporta.
 O que torna ideal para atendimento em ambiente virtual de aprendizagem de alta disponibilidade.
 
-Nesse contexto de atendimento massivo e na dificuldade de construir e manter uma central de atendimento, foi desenvolvido um \textit{chatbot} de conversação textual para a plataforma mensagens instantâneas chamada  Telegram, denominado de \abrv[EVA - EV.G Virtual Assistant]{EVA} (EV.G \textit{Virtual Assistant}).
-O objetivo geral de EVA é ter a capacidade de conversar via texto com alunos da EV.G no atendimento administrativo de uma secretaria acadêmica.
+No âmbito da EV.G, observa-se que grande parte das solicitações dos alunos referem-se a assuntos simples, repetitivos e facilmente resolvidos a partir de uma consulta a informações disponíveis em banco de dados. É o caso de dúvidas relativas à emissão de certificados, procedimentos de inscrição, credenciais de acesso, entre outros. Dúvidas qualitativas, referentes à conteúdos, situações inéditas, por exemplo, são raras e podem ser direcionadas para um atendimento de segundo nível.   
+
+Nesse contexto da EV.G de atendimento massivo a usuários em cursos a distância, e considerando duas premissas fundamentais, quais sejam, (1) a dificuldade de construir e manter uma central de atendimento e (2) a existência de um conteúdo geral de atendimento favorável à automação do processo de interação, foi desenvolvido um \textit{chatbot} de conversação textual compatível com a plataforma mensagens instantâneas chamada Telegram, denominado EVA (EV.G Virtual Assistant). O objetivo geral de EVA é automatizar a interação via texto no atendimento administrativo de primeiro nível a alunos no âmbito da secretaria acadêmica da EV.G.
 
 
 \section{Objetivos}\label{cap:01:sec:01:objetivos}
