@@ -67,9 +67,9 @@ Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funci
    \hline
     RNF01 & Disponibilidade & O sistema deve estar disponível continuamente (24 horas / 7 dias por semana). \\
    \hline
-    RNF02 & Confidencialidade & O sistema deve garantir a visualização dos dados apenas pelo usuário associado. \\
+    RNF02 & Confidencialidade (a) & O sistema deve garantir a visualização dos dados apenas pelo usuário associado. \\
    \hline
-    RNF03 & Integridade & O sistema deve garantir que caso algum usuário falhe ao tentar se autenticar por três vezes consecutivas, bloqueie as tentativas de acesso dele durante 24 horas. \\
+    RNF03 & Confidencialidade (b) & O sistema deve garantir que caso algum usuário falhe ao tentar se autenticar por três vezes consecutivas, bloqueie as tentativas de acesso dele durante 24 horas. \\
    \hline
    RNF04 & Portabilidade & O sistema deverá atender prioritariamente na plataforma de mensagens instantâneas Telegram. \\
    \hline
@@ -211,8 +211,8 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
     \item \textbf{Requisitos não funcionais:}
         \begin{enumerate}
             \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade.
-            \item RNF03 - Integridade.
+            \item RNF02 - Confidencialidade (a).
+            \item RNF03 - Confidencialidade (b).
             \item RNF05 - Interoperabilidade.
             \item RNF07 - Autenticação.
         \end{enumerate}
@@ -260,7 +260,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 \end{itemize}
 
 \subsubsection{UC03 - Visualizar histórico escolar completo}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar o histórico escolar de um aluno vinculado ao EV.G. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, o estado em que se encontra a matrícula do aluno e o estado de sua turma de ensino. 
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar o histórico escolar de um aluno vinculado ao EV.G. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, o estado em que se encontra a inscrição do aluno e o estado de sua turma de ensino. 
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -280,7 +280,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
     \item \textbf{Requisitos não funcionais:}
         \begin{enumerate}
             \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade.
+            \item RNF02 - Confidencialidade (a).
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
@@ -290,7 +290,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
             \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
             \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá informar ao aluno o seu histórico escolar completo. Para cada item identificado, EVA deverá especificar os nome do curso, a cargas horária, o estado da matrícula do aluno e o estado da turma de ensino.
+            \item EVA irá informar ao aluno o seu histórico escolar completo. Para cada item identificado, EVA deverá especificar os nome do curso, a cargas horária, o estado da inscrição do aluno e o estado da turma de ensino.
         \end{enumerate}
     \item \textbf{Fluxo alternativo A:}
         \begin{enumerate}
@@ -322,7 +322,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
     \item \textbf{Requisitos não funcionais:}
         \begin{enumerate}
             \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade.
+            \item RNF02 - Confidencialidade (a).
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
@@ -364,7 +364,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
     \item \textbf{Requisitos não funcionais:}
         \begin{enumerate}
             \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade.
+            \item RNF02 - Confidencialidade (a).
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
@@ -374,7 +374,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
             \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
             \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
             \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, o estado da matrícula, a carga horária e a situação da turma. 
+            \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, o estado da inscrição, a carga horária e a situação da turma. 
         \end{enumerate}
         
     \item \textbf{Fluxo alternativo A:}
@@ -411,7 +411,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
     \item \textbf{Requisitos não funcionais:}
         \begin{enumerate}
             \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade.
+            \item RNF02 - Confidencialidade (a).
             \item RNF04 - Portabilidade.
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
@@ -512,7 +512,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
             \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou.
             \item \textbf{EVA:} Curso: Informática básica; \\
             Carga horária: 70 horas; \\
-            Situação da matrícula: Concluído; \\
+            Situação da inscrição: Concluído; \\
             Situação da turma: Finalizada;\\ \ldots
         \end{enumerate}
     
@@ -585,7 +585,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
             \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou
             \item \textbf{EVA:} Curso: Ética e Serviço público; \\
             Carga horária: 20 horas; \\
-            Situação da matrícula: Em andamento; \\
+            Situação da inscrição: Em andamento; \\
             Situação da turma: Aberto;\\ \ldots
         \end{enumerate}
     
