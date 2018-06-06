@@ -46,7 +46,7 @@ Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais
    \hline
     RF05 & Auxiliar na emissão de certificados & O \textit{chatbot} deve auxiliar o usuário no processo de emissão de certificados dos cursos concluídos por ele, caso seja solicitado por ele. \\
    \hline
-    RF06 & Visualizar as inscrições de cursos abertos & O \textit{chatbot} deve exibir ao usuário quais inscrições de cursos que estão abertas, caso seja solicitado por ele. \\
+    RF06 & Visualizar as inscrições de cursos em aberto & O \textit{chatbot} deve exibir ao usuário quais inscrições de cursos que estão abertas, caso seja solicitado por ele. \\
    \hline
 \end{tabular}
 \end{table}
@@ -135,7 +135,7 @@ Como dito no começo desta seção, casos de uso permitem definir as funções d
    \hline
     UC04 & Receber auxílio na emissão de certificados & O usuário poderá solicitar auxilio para a emissão dos certificados dos cursos no qual ele finalizou no âmbito da EV.G. \\
    \hline
-    UC05 & Visualizar inscrições de cursos abertos & O usuário poderá solicitar a visualização de todos os cursos na qual possui matricula ativa no âmbito da EV.G. \\
+    UC05 & Visualizar inscrições de cursos em aberto & O usuário poderá solicitar a visualização de todos os cursos na qual possui matricula ativa no âmbito da EV.G. \\
    \hline
     UC06 & Efetuar logout & O usuário deixará de estar autenticado no sistema. Com isso, ele volta a possuir acesso limitado às funcionalidades de EVA.\\
    \hline
@@ -186,7 +186,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 \end{itemize}
 
 \subsubsection{UC02 - Efetuar login}
-\textbf{Descrição:} Este caso de uso especifica a ação de autenticação no sistema, com o objetivo de identificar o aluno vinculado ao EV.G. A partir da autenticação, O aluno passará a receber auxilio personalizado e terá acesso aos recursos mais sofisticados de EVA. O usuário irá informar o seu CPF ou e-mail, EVA irá consultar na sua base de dados afim de verificar se o usuário de fato possui um vinculo com a EV.G, e então será determinado se há a possibilidade de ser realizada a autenticação ou não.
+\textbf{Descrição:} Este caso de uso especifica a ação de autenticação no sistema, com o objetivo de identificar o aluno vinculado a EV.G. A partir da autenticação, O aluno passará a receber auxilio personalizado e terá acesso aos recursos mais sofisticados de EVA. O usuário irá informar o seu CPF ou e-mail, EVA irá consultar na sua base de dados afim de verificar se o usuário de fato possui um vinculo com a EV.G, e então será determinado se há a possibilidade de ser realizada a autenticação ou não.
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -218,7 +218,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
         \end{enumerate}
     \item \textbf{Fluxo básico:}
         \begin{enumerate}
-            \item Ao início de uma conversação com EVA, ela irá solicitar que o usuário se identifique, para que ela possa lhe dar auxilio mais personalizado. Para isso, EVA irá solicitar que ele lhe informe o seu CPF ou e-mail cadastrados no EV.G.
+            \item Ao início de uma conversação com EVA, ela irá solicitar que o usuário se identifique, para que ela possa lhe dar auxilio mais personalizado. Para isso, EVA irá solicitar que ele lhe informe o seu CPF ou e-mail cadastrados na EV.G.
             \item O usuário então irá informar o seu e-mail ou CPF.
             \item EVA irá verificar se o usuário está bloqueado no sistema.
             \item EVA irá verificar se o número de tentativas de autenticação chegaram ao valor limite, nesse caso, a três.
@@ -260,7 +260,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 \end{itemize}
 
 \subsubsection{UC03 - Visualizar histórico escolar completo}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar o histórico escolar de um aluno vinculado ao EV.G. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, o estado em que se encontra a inscrição do aluno e o estado de sua turma de ensino. 
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar o histórico escolar de um aluno vinculado a EV.G. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, o estado em que se encontra a inscrição do aluno e o estado de sua turma de ensino. 
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -302,7 +302,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 
 
 \subsubsection{UC04 - Receber auxílio na emissão de certificados}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado ao EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos pelo aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado. Existem três situações possíveis para a emissão de certificados. O primeira situação, caso o curso tenha sido concluído no ano de 2015 para frente, EVA deve orientar o aluno a emitir o certificado no ambiente https://ava.enap.gov.br. O segundo, caso o curso tenha sido concluído entre os anos de 2013 a 2014, EVA deve orientar o aluno a emitir o certificado no ambiente https://moodle23.enap.gov.br. E o último, caso o curso tenha sido concluído antes do ano de 2013, EVA deverá orientar o aluno a enviar um e-mail para ead@enap.gov.br. Além das instruções para a emissão do certificado, para os itens de cada caso, EVA deverá informar o nome do curso e a carga horária.
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado a EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos pelo aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado. Existem três situações possíveis para a emissão de certificados. O primeira situação, caso o curso tenha sido concluído no ano de 2015 para frente, EVA deve orientar o aluno a emitir o certificado no ambiente https://ava.enap.gov.br. O segundo, caso o curso tenha sido concluído entre os anos de 2013 a 2014, EVA deve orientar o aluno a emitir o certificado no ambiente https://moodle23.enap.gov.br. E o último, caso o curso tenha sido concluído antes do ano de 2013, EVA deverá orientar o aluno a enviar um e-mail para ead@enap.gov.br. Além das instruções para a emissão do certificado, para os itens de cada caso, EVA deverá informar o nome do curso e a carga horária.
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -343,8 +343,8 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 \end{itemize}
 
 
-\subsubsection{UC05 - Visualizar inscrições de cursos abertos}
-\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar quais inscrições de cursos de um aluno vinculado ao EV.G que estão em aberto. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, estado da matricula do aluno e o estado da turma. 
+\subsubsection{UC05 - Visualizar inscrições de cursos em aberto}
+\textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar quais inscrições de cursos de um aluno vinculado a EV.G que estão em aberto. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, estado da matricula do aluno e o estado da turma. 
 
 \begin{itemize}
     \item \textbf{Atores:}
@@ -359,7 +359,7 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
         \begin{enumerate}
             \item RF01 - Conversação.
             \item RF02 - Compreensão.
-            \item RF06 - Visualizar as inscrições de cursos abertos.
+            \item RF06 - Visualizar as inscrições de cursos em aberto.
         \end{enumerate}
     \item \textbf{Requisitos não funcionais:}
         \begin{enumerate}
@@ -472,7 +472,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
             \item \textbf{EVA:} Você ainda não está cadastrado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
             \item \textbf{Usuário:} test@evg.com
             \item \textbf{EVA:} Certo.. Aguarde alguns instantes enquanto eu faço a consulta no nosso banco de dados, está bem?
-            \item \textbf{EVA:} Seja muito bem-vindo!! Eu sou a EVA, a sua assistente virtual do EV.G. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar a você quais cursos estão em aberto!! Fique a vontade, faça alguma pergunta.
+            \item \textbf{EVA:} Seja muito bem-vindo!! Eu sou a EVA, a sua assistente virtual da EV.G. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar a você quais cursos estão em aberto!! Fique a vontade, faça alguma pergunta.
         \end{enumerate}
     
     \item \textbf{O que pode dar errado:}
@@ -489,12 +489,12 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
         
         O usuário tentou se autenticar por três vezes consecutivas sem sucesso.
         \begin{enumerate}
-            \item \textbf{EVA:} Infelizmente, por motivos de segurança, estaremos bloqueando suas solicitações de registro por um dia. Caso você ache que os dados inseridos estão corretos, peço que você entre em contato com o EVG. Tente novamente amanhã, desculpe o transtorno.
+            \item \textbf{EVA:} Infelizmente, por motivos de segurança, estaremos bloqueando suas solicitações de registro por um dia. Caso você ache que os dados inseridos estão corretos, peço que você entre em contato com a EV.G. Tente novamente amanhã, desculpe o transtorno.
         \end{enumerate}
         
         O usuário, já bloqueado, tenta se autenticar novamente.
         \begin{enumerate}
-            \item \textbf{EVA:} Por motivos de segurança, você está bloqueado por um dia. Caso você ache que os dados inseridos anteriormente estejam corretos, peço que você entre em contato com o EVG. Tente novamente amanhã, desculpe o transtorno.
+            \item \textbf{EVA:} Por motivos de segurança, você está bloqueado por um dia. Caso você ache que os dados inseridos anteriormente estejam corretos, peço que você entre em contato com a EV.G. Tente novamente amanhã, desculpe o transtorno.
         \end{enumerate}
     
 \end{itemize}
@@ -572,7 +572,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
 \end{itemize}
 
 
-\subsubsection{Diálogo UC05 - Visualizar inscrições de cursos abertos}
+\subsubsection{Diálogo UC05 - Visualizar inscrições de cursos em aberto}
 
 \begin{itemize}
     \item \textbf{Suposição inicial:}
@@ -659,7 +659,7 @@ Ele será utilizado para criar a API de EVA, na qual esta terá duas principais 
 
 \subsubsection{Python-telegram-bot}
 
-Como EVA irá atender as solicitações dos alunos vinculados ao EV.G pelo Telegram, será necessário que haja uma forma de integração do \textit{chatbot} com este \textit{messenger}. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
+Como EVA irá atender as solicitações dos alunos vinculados a EV.G pelo Telegram, será necessário que haja uma forma de integração do \textit{chatbot} com este \textit{messenger}. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
 
 Como o Python é a linguagem de programação base do sistema de EVA, e para facilitar ainda mais a integração do sistema com o Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca fornece uma interface de fácil acesso, em Python, aos recursos fornecidos pelo Telegram Bot API, se tornando uma solução ideal para a construção do sistema de EVA.
 
@@ -671,7 +671,7 @@ O acrônimo API que provém do inglês Application Programming Interface (Em por
 
 A API de EVA será desenvolvida utilizando o framework Django, e terá duas principais funções no sistema como um todo. A primeira, será que a API estará responsável por estabelecer uma interoperabilidade com o serviço de PNL fornecido pelo Wit.ai, para que possa compreender as mensagens textuais enviadas pelos alunos que estiverem se comunicando com o \textit{chatbot} de EVA. A segunda, será que a partir da intenção da mensagem, analisada e estruturada pelo Wit.ai, será elaborada a devida resposta e enviada de volta ao \textit{chatbot} de EVA.
 
-É válido informar também, que a base de dados das informações escolares dos alunos vinculados ao EV.G, estará atrelada à própria API de EVA, sendo assim, não será necessário que haja uma comunicação com algum serviço externo da EV.G, para que se possa consultar tais informações.
+É válido informar também, que a base de dados das informações escolares dos alunos vinculados a EV.G, estará atrelada à própria API de EVA, sendo assim, não será necessário que haja uma comunicação com algum serviço externo da EV.G, para que se possa consultar tais informações.
 
 Para melhor exemplificar como funcionará a API de EVA, na Figura \ref{cap:03:fig:diagrama-sequencia-1} está apresentado o diagrama de sequência da mesma.
 \begin{figure}[htb!]
