@@ -136,7 +136,7 @@
 % -----
 % Cabecalho padrao
 \makepagestyle{abntbookheadings}
-\makeevenhead{abntbookheadings}{\ABNTEXfontereduzida\thepage}{}{}
+\makeevenhead{abntbookheadings}{}{}{\ABNTEXfontereduzida\thepage}
 \makeoddhead{abntbookheadings}{}{}{\ABNTEXfontereduzida\thepage}
 %\makeheadrule{abntbookheadings}{\textwidth}{\normalrulethickness}
 
@@ -277,6 +277,7 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 \renewcommand*{\cftchapterleader}{\hfill}
 \renewcommand*{\cftsectionleader}{\hfill}
 \renewcommand*{\cftsubsectionleader}{\hfill}
+\renewcommand*{\cftsubsubsectionleader}{\hfill}
 
 \setlength{\cftbeforechapterskip}{0em}
 
@@ -287,6 +288,9 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 \renewcommand{\cftsectionpagefont}{\normalsize\normalfont}
 
 \renewcommand{\cftsubsectionpagefont}{\normalsize\normalfont}
+
+\renewcommand{\cftsubsubsectionfont}{\normalfont}
+\renewcommand{\cftsubsubsectionpagefont}{\normalsize\normalfont}
 
 \makeatletter
 \let\oldcontentsline\contentsline
@@ -327,7 +331,9 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 \renewcommand{\ABNTEXsubsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalsize}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
 % \newcommand{\ABNTEXsectionfont}{\ABNTEXchapterfont}
