@@ -22,9 +22,6 @@
 
 \chapter{EV.G Virtual Assistant}
 
-\section{Apresentação do projeto}
-
-
 A EV.G Virtual Assistant (EVA) é um \textit{chatbot} de domínio amplo que será capaz de interagir com os alunos vinculados à EV.G na medida de suas necessidades.
 Ela irá atender tais solicitações via mecanismo de conversação textual na plataforma de mensagens instantâneas chamada Telegram, no atendimento administrativo de uma secretaria acadêmica.
 
@@ -44,16 +41,12 @@ Ao invés disso, os requisitos de EVA serão apenas detalhados nas subseções a
 \subsection{Requisitos funcionais}
 
 Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos funcionais de um sistema. 
-Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais elencados para o sistema de EVA.
+Abaixo, na Quadro \ref{Quadro:Quadro1}, estão listados os requisitos funcionais elencados para o sistema de EVA.
 
-\begin{table}[htb]
+\begin{quadro}[htb!]
 \caption{Detalhamento de requisitos funcionais de EVA}
 % \textsf{\caption{Especificação de requisitos funcionais de EVA}}
-\label{tabela:tabela1}
-% \center
-% \footnotesize
-\centering
-\medskip
+\label{Quadro:Quadro1}
 \begin{tabular}{|p{1.2cm}|p{3.5cm}|p{7.5cm}|}
   \hline
    \textbf{\#RF} & \textbf{Nome}  & \textbf{Descrição}  \\
@@ -71,18 +64,17 @@ Abaixo, na Tabela \ref{tabela:tabela1}, estão listados os requisitos funcionais
     RF06 & Visualizar as inscrições de cursos em aberto & O \textit{chatbot} deve exibir ao usuário quais inscrições de cursos que estão abertas, caso seja solicitado por ele. \\
    \hline
 \end{tabular}
-\end{table}
+\mfonte
+\end{quadro}
 
 \subsection{Requisitos não funcionais}\label{cap3-requisitos-nao-funcionais}
 
 Na seção \ref{cap:02:sec:05:projeto:classificacao-requisitos}, foi explicado o que são os requisitos não funcionais de um sistema. 
-Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
+Abaixo, na Quadro \ref{Quadro:Quadro2}, estão listados os requisitos não funcionais elencados para o sistema de EVA.
 
-\begin{table}[htb!]
+\begin{quadro}[htb!]
 \caption{Detalhamento de requisitos não funcionais de EVA}
-\label{tabela:tabela2}
-\center
-\footnotesize
+\label{Quadro:Quadro2}
 \begin{tabular}{|p{1.2cm}|p{3.5cm}|p{7.5cm}|}
   \hline
    \textbf{\#RNF} & \textbf{Nome}  & \textbf{Descrição}  \\
@@ -101,9 +93,9 @@ Abaixo, na Tabela \ref{tabela:tabela2}, estão listados os requisitos não funci
    \hline
     RNF07 & Autenticação & A autenticação será pela confirmação de dados pessoais, neste caso pelo email e/ou CPF cadastrado. \\
    \hline
-   
 \end{tabular}
-\end{table}\label{tabela:3}
+\mfonte
+\end{quadro}\label{Quadro:3}
 
 \section{Casos de uso de EVA}\label{casos-de-uso-eva}
 
@@ -118,13 +110,11 @@ Um ator é algo com comportamento, tal como uma pessoa (identificada por seu pap
 No que se diz respeito a EVA, foram identificados como atores o Visitante e o Aluno. 
 Ambos poderão interagir com EVA, por meio de mensagens textuais, porém com as devidas restrições. 
 É válido ressaltar, que a EVA não entra como ator, já que será o próprio sistema na qual está sendo modelando. 
-Na Tabela \ref{tabela:tabela3} os atores são especificados.
+Na Quadro \ref{Quadro:Quadro3} os atores são especificados.
 
-\begin{table}[htb!]
+\begin{quadro}[htb!]
 \caption{Especificação dos atores do sistema de EVA}
-\label{tabela:tabela3}
-\center
-\footnotesize
+\label{Quadro:Quadro3}
 \begin{tabular}{|p{2cm}|p{3cm}|p{7.5cm}|}
   \hline
    \textbf{\#ATOR} & \textbf{Nome}  & \textbf{Descrição}  \\
@@ -134,17 +124,16 @@ Na Tabela \ref{tabela:tabela3} os atores são especificados.
     ATOR02 & Aluno & Qualquer pessoa que interaja com EVA e esteja devidamente autenticado e identificado no sistema. \\
    \hline
 \end{tabular}
-\end{table}
+\mfonte
+\end{quadro}
 
 \subsection{Especificação dos casos de uso}
 
-Como dito no começo desta seção, casos de uso permitem definir as funções de aplicação que o sistema deverá oferecer para o usuário. A partir dos requisitos funcionais identificados para EVA, foram extraídos os casos de uso especificados na Tabela \ref{tabela:tabela4}.
+Como dito no começo desta seção, casos de uso permitem definir as funções de aplicação que o sistema deverá oferecer para o usuário. A partir dos requisitos funcionais identificados para EVA, foram extraídos os casos de uso especificados na Quadro \ref{Quadro:Quadro4}.
 
-\begin{table}[htb!]
+\begin{quadro}[htb!]
 \caption{Especificação dos casos de uso de EVA}
-\label{tabela:tabela4}
-\center
-\footnotesize
+\label{Quadro:Quadro4}
 \begin{tabular}{|p{2cm}|p{3cm}|p{7.5cm}|}
   \hline
    \textbf{\#UC} & \textbf{Nome}  & \textbf{Descrição}  \\
@@ -162,9 +151,8 @@ Como dito no começo desta seção, casos de uso permitem definir as funções d
     UC06 & Efetuar logout & O usuário deixará de estar autenticado no sistema. Com isso, ele volta a possuir acesso limitado às funcionalidades de EVA.\\
    \hline
 \end{tabular}
-\end{table}
-
-
+\mfonte
+\end{quadro}
 
 \subsection{Diagrama de casos de uso}
 
@@ -172,17 +160,19 @@ Para descrever de forma visual e clara como se dará o vínculo entre os atores 
 
 Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso, que são as possíveis interações que poderão ser realizadas, é representada por uma elipse. As linhas fazem a ligação entre os atores e as interações. Na Figura \ref{cap:03:fig:diagrama}, está representado o diagrama de casos de uso de EVA.
 
-\begin{figure}
+\begin{figure}[htb!]
   \caption{
     \label{cap:03:fig:diagrama}
     Casos de uso - EVA
   }
-  \includegraphics[width=0.2\linewidth]{imagens/CasoDeUsoEva.png}
+  \includegraphics[width=0.3\linewidth]{imagens/CasoDeUsoEva.png}
   \mfonte
 \end{figure}
 
 
 \subsection{Detalhamento dos casos de uso}\label{cap3-detalhamento-casos-de-uso}
+
+Nesta subseção, serão detalhados os casos de uso de EVA.
 
 \subsubsection{UC01 - Dialogar com EVA}
 \textbf{Descrição:} Este caso de uso especifica a ação principal de interação do usuário com o \textit{chatbot}, que é o diálogo. Por meio de mensagens textuais na língua portuguesa, o usuário poderá interagir com EVA e ter acesso à as suas funcionalidades. O nível de funcionalidades disponíveis para acesso do usuário, será determinada pelo fato dele estar autenticado ou não no sistema.
@@ -459,6 +449,8 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
 
 \subsection{Cenários}
 
+Nesta subseção, serão detalhados os diálogos de EVA utilizando os cenários.
+
 \subsubsection{Diálogo UC01 - Dialogar com EVA}
 
 \begin{itemize}
@@ -493,7 +485,7 @@ Na seção \ref{texto:elaborando-dialogos} foi explicado como elaborar diálogos
 \begin{itemize}
     \item \textbf{Suposição inicial:} 
     
-        EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu \abrv[CPF - Cadastro de Pessoas Físicas]{CPF} ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
+        EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu CPF ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
         
         \begin{enumerate}
             \item \textbf{EVA:} Você ainda não está cadastrado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
@@ -660,10 +652,6 @@ Na seção ~\ref{chatbot:dev}, foram exemplificadas as duas formas utilizadas no
 
 No que diz respeito a arquitetura de EVA, pode-se dizer que esta consiste em duas partes principais: a API e o \textit{chatbot} propriamente dito. A escolha desta divisão, está diretamente ligada ao fato de que o sistema, no futuro, tende a continuar crescendo, seja atendendo em outras plataformas de mensagens ou adicionando novas funcionalidades ao sistema de EVA. Em outras palavras, essa arquitetura tem como objetivo tornar o sistema mais escalável. Nas subseções abaixo, serão detalhados as tecnologias que irão compor todo o sistema de EVA e também detalhes sobre a sua implementação.
 
-\todo{adicionar uma figura da macro arquitetura}
-
-O código-fonte de EVA pode ser acessado em \url{https://github.com/evatalk}.
-
 \subsection{Tecnologias}
 
 Nesta subseção, serão detalhadas as principais tecnologias utilizadas em todo o desenvolvimento de EVA, tanto para a criação da API, quanto para o \textit{chatbot} propriamente dito.
@@ -694,7 +682,7 @@ Como EVA irá atender as solicitações dos alunos vinculados a EV.G pelo Telegr
 
 Como o Python é a linguagem de programação base do sistema de EVA, e para facilitar ainda mais a integração do sistema com o Telegram Bot API, foi utilizado a biblioteca Python-telegram-bot. Esta biblioteca fornece uma interface de fácil acesso, em Python, aos recursos fornecidos pelo Telegram Bot API, se tornando uma solução ideal para a construção do sistema de EVA.
 
-\subsection{Arquitetura da API}
+\subsection{Arquitetura da API}\label{eva-arquitetura-api}
 
 Como dito no começo desta seção, o sistema de EVA é divido em duas partes principais, a API e o \textit{chatbots} propriamente dito. Nesta subseção, será explicado como funcionará a API de EVA.
 
@@ -715,7 +703,7 @@ Para melhor exemplificar como funcionará a API de EVA, na Figura \ref{cap:03:fi
   \mfonte
 \end{figure}
 
-\subsection{Arquitetura do \textit{chatbot}}
+\subsection{Arquitetura do \textit{chatbot}}\label{eva-arquitetura-chatbot}
 
 Nesta subseção, será explicado como funcionará o \textit{chatbot} de EVA. Na seção \ref{cap:02:sec:03:sub:chatbotsmessenger}, foi detalhado como funcionam os \textit{chatbots} em plataformas de mensagens instantâneas. Lá foi explicado que alguns desses \textit{messengers} oferecem ferramentas e suporte, sob licenças específicas, para o desenvolvimento de \textit{chatbots} em sua plataforma, por meio de APIs. Como é um requisito essencial que EVA atenda as demandas dos usuários através do Telegram, será necessário que haja uma comunicação entre o sistema de EVA com a API do mesmo. Atualmente, o Telegram possui o Telegram Bot API, que é uma API baseada no protocolo HTTP, criada para que desenvolvedores interessados possam construir \textit{chatbots} em sua plataforma.
 
@@ -731,6 +719,19 @@ Resumidamente, esta parte do sistema de EVA será responsável por verificar se 
     Diagrama de sequência do \textit{chatbot} de EVA
   }
   \includegraphics[width=0.5\linewidth]{imagens/EVACHATBOTSEQUENCE.png}
+  \mfonte
+\end{figure}
+
+\subsection{Fluxo de comunicação das arquiteturas de EVA}
+
+Para melhor exemplificar como se dá o fluxo de comunicação, processamento e resposta de EVA, desde a mensagem enviada pelo usuário até a sua resposta de EVA para o mesmo, na Figura \ref{cap:03:fig:processamento} é apresentada de maneira mais visual de como ocorre a comunicação entre as arquiteturas e os serviços utilizados no projeto.
+
+\begin{figure}
+  \caption{
+    \label{cap:03:fig:processamento}
+    Fluxo de comunicação de EVA
+  }
+  \includegraphics[width=0.8\linewidth]{imagens/EVADiagramComplete.png}
   \mfonte
 \end{figure}
 

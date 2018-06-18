@@ -23,7 +23,7 @@
   % -- opções da classe memoir --
   12pt,                 % tamanho da fonte
   openright,            % capítulos começam em pág ímpar (insere página vazia caso preciso)
-  twoside,              % para impressão em recto e verso. Oposto a oneside
+  oneside,              % para impressão em recto e verso. Oposto a oneside
   a4paper,              % tamanho do papel.
   % -- opções da classe abntex2 --
   sumario=abnt-6027-2012,
@@ -56,7 +56,7 @@
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}   % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}  % Citações padrão ABNT
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}  % Citações padrão ABNT
 
 % ---
 % CONFIGURAÇÕES DE PACOTES
@@ -65,18 +65,20 @@
 % ---
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backrefpagesname}{}
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-  \ifcase #1 %
-    Nenhuma citação no texto.%
-  \or
-    Citado na página #2.%
-  \else
-    Citado #1 vezes nas páginas #2.%
-  \fi}%
+% \renewcommand*{\backrefalt}[4]{
+%   \ifcase #1 %
+%     Nenhuma citação no texto.%
+%   \or
+%     Citado na página #2.%
+%   \else
+%     Citado #1 vezes nas páginas #2.%
+%   \fi}%
+\renewcommand*{\backrefalt}[4]{}
 % ---
 
 \usepackage{textcase}
@@ -97,15 +99,15 @@
 \usepackage{navigator}
 \usepackage{listings}
 
-\usepackage{float}
+% \usepackage{float}
 \usepackage{multirow}
 % \usepackage[all]{nowidow}
 
 \usepackage{mdframed}
 
-% \floatplacement{figure}{!htb}
-\floatplacement{figure}{H}
-\floatplacement{table}{H}
+% \setfloatlocations{figure}{!htb}
+\setfloatlocations{figure}{!hbtp}
+\setfloatlocations{table}{!hbtp}
 
 \graphicspath{ {./imagens/} }
 
@@ -136,6 +138,7 @@
 % -----
 % Cabecalho padrao
 \makepagestyle{abntbookheadings}
+% \makeevenhead{abntbookheadings}{\ABNTEXfontereduzida\thepage}{}{}
 \makeevenhead{abntbookheadings}{}{}{\ABNTEXfontereduzida\thepage}
 \makeoddhead{abntbookheadings}{}{}{\ABNTEXfontereduzida\thepage}
 %\makeheadrule{abntbookheadings}{\textwidth}{\normalrulethickness}
@@ -156,7 +159,7 @@
 \DTMsavedate{mdate}{2018-06-11}
 \date{\DTMusedate{mdate}}
 
-\title{EVA: Desenvolvimento de um Chatbot para Escola Virtual de Governo}
+\title{EVA: Desenvolvimento de um Chatbot para a Escola Virtual de Governo}
 \author{Mauro de Carvalho Gonçalves}
 \local{\uppercase{Natal-RN}}
 \date{2018}
@@ -190,12 +193,51 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 \makeatother
 
 % ---
+% Possibilita criação de Quadros e Lista de quadros.
+% Ver https://github.com/abntex/abntex2/issues/176
+%
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+
+\newfloat{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+
+% configurações para atender às regras da ABNT
+\setfloatadjustment{quadro}{\centering}
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+
+\setfloatlocations{quadro}{!hbtp}
+
+\makeatletter
+\renewcommand*{\ext@quadro}{lof}
+\makeatother
+% ---
+
+% ---
 % Posiciona figuras e tabelas no topo da página quando adicionadas sozinhas
 % em um página em branco. Ver https://github.com/abntex/abntex2/issues/170
 \makeatletter
 \setlength{\@fptop}{5pt} % Set distance from top of page to first float
 \makeatother
 % ---
+
+\renewcommand{\fontename}{Fonte}
+\renewcommand{\ABNTEXcaptionfontedelim}{:}
+
+\makeatletter
+\renewcommand{\fonte}[2][\fontename]{%
+  \memlegendinfo{#2}%
+  \par
+\begingroup
+    \ABNTEXfontereduzida
+    \configureseparator
+    \captiondelim{:~}
+    \@makecaption{\ABNTEXfontereduzida #1}{\ignorespaces\ABNTEXfontereduzida #2}\par
+\endgroup}
+\makeatother
 
 \newcommand{\mfonte}[0]{%
   \fonte{Elaboração própria em \DTMfetchyear{mdate}}}
@@ -247,12 +289,12 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 
 \let\oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][]{%
-  \begin{mdframed}%
+%   \begin{mdframed}%
 %   \begin{center}%
     \centering%
     \oldincludegraphics[max width=.7\linewidth,#1]{#2}%
 %   \end{center}%
-  \end{mdframed}%
+%   \end{mdframed}%
 }
 
 \setlength{\ABNTEXsignwidth}{10cm}
@@ -278,19 +320,35 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 \renewcommand*{\cftsectionleader}{\hfill}
 \renewcommand*{\cftsubsectionleader}{\hfill}
 \renewcommand*{\cftsubsubsectionleader}{\hfill}
+\renewcommand*{\cftparagraphleader}{\hfill}
 
 \setlength{\cftbeforechapterskip}{0em}
 
+%--
+% seção primária
+%--
 \renewcommand{\cftchapterfont}{\bfseries}
 \renewcommand{\cftchapterpagefont}{\normalsize\normalfont}
-
+%--
+% seção secundária
+%--
 \renewcommand{\cftsectionfont}{\normalfont}
 \renewcommand{\cftsectionpagefont}{\normalsize\normalfont}
-
+%--
+% seção terciária
+%--
+\renewcommand{\cftsubsectionfont}{\normalfont\bfseries}
 \renewcommand{\cftsubsectionpagefont}{\normalsize\normalfont}
-
+%--
+% seção quaternária
+%--
 \renewcommand{\cftsubsubsectionfont}{\normalfont}
 \renewcommand{\cftsubsubsectionpagefont}{\normalsize\normalfont}
+%--
+% seção quinária
+%--
+\renewcommand{\cftparagraphfont}{\normalfont\itshape}
+\renewcommand{\cftparagraphpagefont}{\normalsize\normalfont}
 
 \makeatletter
 \let\oldcontentsline\contentsline
@@ -331,10 +389,8 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 \renewcommand{\ABNTEXsubsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
-\renewcommand{\ABNTEXsubsubsectionfont}{\normalsize}
-\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
-
-\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalfont}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalfont\itshape}
 
 % \newcommand{\ABNTEXsectionfont}{\ABNTEXchapterfont}
 % \newcommand{\ABNTEXsubsectionfont}{\ABNTEXsectionfont}
@@ -364,6 +420,8 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
 
 % \setlength{\abovecaptionskip}{0pt}
 % \setlength{\belowcaptionskip}{0pt}
+
+% \renewcommand\cleardoublepage{}
 
 % Inicio do documento
 \begin{document}
@@ -396,12 +454,12 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
   % ---
   % inserir lista de tabelas
   % ---
-  \pdfbookmark[0]{\listtablename}{lot}
-  \listoftables*
-  \cleardoublepage
+  %\pdfbookmark[0]{\listtablename}{lot}
+  %\listoftables*
+  %\cleardoublepage
   % ---
 
-  \include{tra-includes/Abreviaturas}
+  %\include{extra-includes/Abreviaturas}
 
   % ---
   % inserir o sumario
@@ -431,6 +489,9 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
   % Capitulo 5: Quinto capítulo (arquivo Includes/Capitulo5.tex)
   \include{capitulos/Capitulo5}
 
+  % Consideracoes finais
+  %\include{capitulos/Consideracoes}
+
   \backmatter
 
   % Bibliografia (arquivo Capitulos/Referencias.bib)
@@ -440,11 +501,11 @@ Trabalho de conclusão de curso apresentado ao Curso Superior de Tecnologia em A
   %\bibliographystyle{abnt-alf}
 
   % Apêndice A (arquivo Includes/ApendiceA)
-%  \begin{apendicesenv}
+  %\begin{apendicesenv}
     %\partapendices
 
-%    \include{capitulos/ApendiceA}
-%  \end{apendicesenv}
+ %   \include{capitulos/ApendiceA}
+ %\end{apendicesenv}
 
   % Anexo A (arquivo Includes/AnexoA)
 %   \begin{anexosenv}
