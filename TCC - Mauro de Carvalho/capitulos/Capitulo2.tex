@@ -148,51 +148,49 @@ Para a elaboração dos diálogos que irão fazer parte do repertório de um \te
 Cenários são uma maneira de representar, no contexto de \textit{chatbots}, os diálogos e interações e as possibilidades que podem surgir a partir destes. Abaixo, um exemplo de cenário que simula o diálogo entre uma atendente e um cliente que deseja consultar seu histórico de compras:
 
 
-\begin{itemize}
+\subsection{Suposição inicial}
+    
+O cliente informa que deseja consultar o seu histórico de compras; a atendente pergunta suas informações pessoais (nome e CPF); o cliente informa seus dados; a atendente faz uma consulta com base nos dados adquiridos; a atendente exibe o histórico de compras do cliente.
+    
+\begin{enumerate}[label=\alph*)]
+\tightlist
+    \item \textbf{Cliente}: Gostaria de consultar meu histórico de compras, por favor.
+   \item \textbf{Atendente}: O senhor poderia me informar o seu nome completo e os três últimos dígitos do seu CPF?
+    \item \textbf{Cliente}: Claro. Meu nome é Custódio de Almeida, e os três últimos dígitos do meu CPF são 186.
+    \item \textbf{Atendente}: Um instante, por favor.
+    \item \textbf{Atendente}: O histórico do senhor é o seguinte: \\
+    Dia: 20/02/2017 - 1 Tênis branco da marca X, 2 camisetas rosas da marca Y; Dia: 25/02/2017 - 2 shorts amarelos da marca Z.
 
-    \item \textbf{Suposição inicial:}
+\end{enumerate}
     
-    O cliente informa que deseja consultar o seu histórico de compras; a atendente pergunta suas informações pessoais (nome e CPF); o cliente informa seus dados; a atendente faz uma consulta com base nos dados adquiridos; a atendente exibe o histórico de compras do cliente.
+\subsection{O que pode dar errado}
     
-    \begin{enumerate}
-        \item \textbf{Cliente}: Gostaria de consultar meu histórico de compras, por favor.
-        \item \textbf{Atendente}: O senhor poderia me informar o seu nome completo e os três últimos dígitos do seu CPF?
-        \item \textbf{Cliente}: Claro. Meu nome é Custódio de Almeida, e os três últimos dígitos do meu CPF são 186.
-        \item \textbf{Atendente}: Um instante, por favor.
-        \item \textbf{Atendente}: O histórico do senhor é o seguinte: \\
-        Dia: 20/02/2017 - 1 Tênis branco da marca X, 2 camisetas rosas da marca Y.\\
-        Dia: 25/02/2017 - 2 shorts amarelos da marca Z.
-        \ldots
-    \end{enumerate}
+As informações fornecidas pelo usuário não conferem com as cadastradas no banco de dados. A atendente informa o usuário que os dados informados não são válidos e pede para que ele tente novamente.
     
-    \item \textbf{O que pode dar errado:}
+\begin{enumerate}[label=\alph*)]
+\tightlist
+    \item \textbf{Atendente}: Me desculpe, mas parece que os dados informados não conferem. Você poderia tentar novamente?
+    \item \textbf{Cliente}: Certo. Tente os seguintes dados dessa vez\ldots
+\end{enumerate}
     
-    As informações fornecidas pelo usuário não conferem com as cadastradas no banco de dados. A atendente informa o usuário que os dados informados não são válidos e pede para que ele tente novamente.
+O usuário nunca efetuou uma compra no estabelecimento. A atendente informa que o usuário não tem nenhuma compra na loja e informa as promoções disponíveis.
     
-    \begin{enumerate}
-        \item \textbf{Atendente}: Me desculpe, mas parece que os dados informados não conferem. Você poderia tentar novamente?
-        \item \textbf{Cliente}: Certo. Tente os seguintes dados dessa vez \ldots
-    \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+\tightlist
+    \item \textbf{Atendente}: Me desculpe, mas parece que o senhor não possui nenhuma compra em nossa loja.
+    \item \textbf{Cliente}: Tudo bem, então.
+    \item \textbf{Atendente}: Caso seja do seu interesse, nós estamos com uma promoção de 30\% de desconto na compra de qualquer camiseta da marca X. Você gostaria de dar uma olhada?
+\end{enumerate}
     
-    O usuário nunca efetuou uma compra no estabelecimento. A atendente informa que o usuário não tem nenhuma compra na loja e informa as promoções disponíveis.
+\subsection{Estado do sistema na conclusão}
     
-    \begin{enumerate}
-        \item \textbf{Atendente}: Me desculpe, mas parece que o senhor não possui nenhuma compra em nossa loja.
-        \item \textbf{Cliente}: Tudo bem, então.
-        \item \textbf{Atendente}: Caso seja do seu interesse, nós estamos com uma promoção de 30\% de desconto na compra de qualquer camiseta da marca X. Você gostaria de dar uma olhada? \ldots
-    \end{enumerate}
+Após exibir o histórico do cliente, a atendente irá perguntar se o ele deseja mais alguma coisa.
     
-    \item \textbf{Estado do sistema na conclusão:}
-    
-    Após exibir o histórico do cliente, a atendente irá perguntar se o ele deseja mais alguma coisa.
-    
-    \begin{enumerate}
-        \item \textbf{Atendente}: Esse é todo o seu histórico de compras em nossa loja. Existe mais alguma coisa em que eu possa lhe ajudar?
-        \ldots
-    \end{enumerate}
-    
-    
-\end{itemize}
+\begin{enumerate}[label=\alph*)]
+\tightlist
+    \item \textbf{Atendente}: Esse é todo o seu histórico de compras em nossa loja. Existe mais alguma coisa em que eu possa lhe ajudar?
+    \ldots
+\end{enumerate}
 
 
 \section{Desenvolvimento de \textit{chatbots}}\label{chatbot:dev}

@@ -175,272 +175,335 @@ Na UML, os atores são representados como figuras ‘palito’. Cada caso de uso
 Nesta subseção, serão detalhados os casos de uso de EVA.
 
 \subsubsection{UC01 - Dialogar com EVA}
+
 \textbf{Descrição:} Este caso de uso especifica a ação principal de interação do usuário com o \textit{chatbot}, que é o diálogo. Por meio de mensagens textuais na língua portuguesa, o usuário poderá interagir com EVA e ter acesso à as suas funcionalidades. O nível de funcionalidades disponíveis para acesso do usuário, será determinada pelo fato dele estar autenticado ou não no sistema.
 
-\begin{itemize}
-    \item \textbf{Atores:}
-        \begin{enumerate}
-            \item ATOR01 - Visitante.
-            \item ATOR02 - Aluno.
-        \end{enumerate}
-    \item \textbf{Requisitos funcionais:}
-        \begin{enumerate}
-            \item RF01 - Conversação.
-            \item RF02 - Compreensão.
-        \end{enumerate}
-    \item \textbf{Requisitos não funcionais:}
-        \begin{enumerate}
-            \item RNF01 - Disponibilidade.
-            \item RNF05 - Portabilidade.
-            \item RNF05 - Interoperabilidade.
-        \end{enumerate}
-    \item \textbf{Fluxo básico:} 
-        \begin{enumerate}
-            \item O usuário envia uma mensagem textual para EVA.
-            \item EVA irá consultar sua base de conhecimento para compreender o que o ator solicita.
-            \item EVA responde ao usuário com base no que foi compreendido.
-        \end{enumerate}
-\end{itemize}
+\subsubsubsection{Atores}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item ATOR01 - Visitante;
+    \item ATOR02 - Aluno.
+\end{enumerate}
+        
+\subsubsubsection{Requisitos funcionais}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+        \item RF01 - Conversação;
+        \item RF02 - Compreensão.
+\end{enumerate}
+        
+\subsubsubsection{Requisitos não funcionais}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item RNF01 - Disponibilidade;
+    \item RNF05 - Portabilidade;
+    \item RNF05 - Interoperabilidade.
+\end{enumerate}
+        
+\subsubsubsection{Fluxo básico}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item O usuário envia uma mensagem textual para EVA;
+    \item EVA irá consultar sua base de conhecimento para compreender o que o ator solicita;
+    \item EVA responde ao usuário com base no que foi compreendido.
+\end{enumerate}
 
 \subsubsection{UC02 - Efetuar login}
+
 \textbf{Descrição:} Este caso de uso especifica a ação de autenticação no sistema, com o objetivo de identificar o aluno vinculado a EV.G. A partir da autenticação, O aluno passará a receber auxilio personalizado e terá acesso aos recursos mais sofisticados de EVA. O usuário irá informar o seu CPF ou e-mail, EVA irá consultar na sua base de dados afim de verificar se o usuário de fato possui um vinculo com a EV.G, e então será determinado se há a possibilidade de ser realizada a autenticação ou não.
 
-\begin{itemize}
-    \item \textbf{Atores:}
-        \begin{enumerate}
-            \item ATOR01 - Visitante.
-            \item ATOR02 - Aluno.
-        \end{enumerate}
-    \item \textbf{Pré-condições:}
-        \begin{enumerate}
-            \item O usuário deve possuir um vinculo com a EV.G.
-        \end{enumerate}
-    \item \textbf{Pós-condições:}
-        \begin{enumerate}
-            \item O usuário terá acesso às funcionalidades mais personalizadas de EVA.
-        \end{enumerate}
-    \item \textbf{Requisitos funcionais:}
-        \begin{enumerate}
-            \item RF01 - Conversação.
-            \item RF02 - Compreensão.
+
+\subsubsubsection{Atores}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item ATOR01 - Visitante;
+    \item ATOR02 - Aluno.
+\end{enumerate}
+        
+\subsubsubsection{Pré-condições}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item O usuário deve possuir um vinculo com a EV.G.
+\end{enumerate}
+        
+\subsubsubsection{Pós-condições}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item O usuário terá acesso às funcionalidades mais personalizadas de EVA.
+\end{enumerate}
+        
+\subsubsubsection{Requisitos funcionais}
+        \begin{enumerate}[label=\alph*)]
+        \tightlist
+            \item RF01 - Conversação;
+            \item RF02 - Compreensão;
             \item RF03 - Autenticação.
         \end{enumerate}
-    \item \textbf{Requisitos não funcionais:}
-        \begin{enumerate}
-            \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade (a).
-            \item RNF03 - Confidencialidade (b).
-            \item RNF05 - Interoperabilidade.
-            \item RNF07 - Autenticação.
+        
+\subsubsubsection{Requisitos não funcionais}
+\begin{enumerate}[label=\alph*)]
+    \tightlist
+    \item RNF01 - Disponibilidade;
+    \item RNF02 - Confidencialidade (a);
+    \item RNF03 - Confidencialidade (b);
+    \item RNF05 - Interoperabilidade;
+    \item RNF07 - Autenticação.
+\end{enumerate}
+        
+\subsubsubsection{Fluxo básico}
+    \begin{enumerate}[label=\alph*)]
+    \tightlist
+        \item Ao início de uma conversação com EVA, ela irá solicitar que o usuário se identifique, para que ela possa lhe dar auxilio mais personalizado. Para isso, EVA irá solicitar que ele lhe informe o seu CPF ou e-mail cadastrados na EV.G;
+        \item O usuário então irá informar o seu e-mail ou CPF;
+        \item EVA irá verificar se o usuário está bloqueado no sistema;
+        \item EVA irá verificar se o número de tentativas de autenticação chegaram ao valor limite, nesse caso, a três;
+        \item EVA irá consultar em sua base de dados se as informações de fato conferem;
+        \item O sistema então irá autenticar o usuário;
+        \item EVA dá as boas vindas e informa ao usuário que a autenticação foi efetuada com sucesso;
+        \item EVA apresenta as suas funcionalidades ao usuário e o convida a utilizar alguma.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo alternativo A}
+        \begin{enumerate}[label=\alph*)]
+        \tightlist
+            \item No Passo \textit{e} do Fluxo Básico, após EVA consultar sua base de dados, foi visto que as informações não conferem;
+            \item A contagem para o limite de tentativas de autenticação de um usuário é incrementada em um;
+            \item EVA então informa ao usuário que os dados não conferem e pede para que ele informe o CPF ou o e-mail novamente;
+            \item O fluxo retornar ao Passo \textit{b} do Fluxo básico.
         \end{enumerate}
-    \item \textbf{Fluxo básico:}
-        \begin{enumerate}
-            \item Ao início de uma conversação com EVA, ela irá solicitar que o usuário se identifique, para que ela possa lhe dar auxilio mais personalizado. Para isso, EVA irá solicitar que ele lhe informe o seu CPF ou e-mail cadastrados na EV.G.
-            \item O usuário então irá informar o seu e-mail ou CPF.
-            \item EVA irá verificar se o usuário está bloqueado no sistema.
-            \item EVA irá verificar se o número de tentativas de autenticação chegaram ao valor limite, nesse caso, a três.
-            \item EVA irá consultar em sua base de dados se as informações de fato conferem.
-            \item O sistema então irá autenticar o usuário.
-            \item EVA dá as boas vindas e informa ao usuário que a autenticação foi efetuada com sucesso.
-            \item EVA apresenta as suas funcionalidades ao usuário e o convida a utilizar alguma.
-        \end{enumerate}
-    \item \textbf{Fluxo alternativo A:}
-        \begin{enumerate}
-            \item No Passo 5 do Fluxo Básico, após EVA consultar sua base de dados, foi visto que as informações não conferem.
-            \item A contagem para o limite de tentativas de autenticação de um usuário é incrementada em um.
-            \item EVA então informa ao usuário que os dados não conferem e pede para que ele informe o CPF ou o e-mail novamente.
-            \item O fluxo retornar ao Passo 2 do Fluxo básico.
-        \end{enumerate}
-    \item \textbf{Fluxo alternativo B:}
-        \begin{enumerate}
-            \item No Passo 5 do Fluxo Básico, a mensagem textual enviada pelo usuário não aparenta ser nem algo parecido com CPF ou e-mail.
-            \item EVA informa que ao usuário que ele precisa informar o CPF ou o e-mail para que ele possa se identificar, e assim, para que eles possam continuar dialogando.
-            \item O fluxo retorna ao Passo 2 do Fluxo básico.
-        \end{enumerate}
-    \item \textbf{Fluxo alternativo C:}
-        \begin{enumerate}
-            \item No Passo 3 do Fluxo Básico, foi visto que o usuário está bloqueado no sistema.
-            \item EVA informa que por questões de segurança, o usuário está bloqueado por um dia.
-            \item EVA auxilia o usuário, que caso ele de fato ache que possui algum vinculo com a EV.G, que ele entre em contato através do e-mail da EVG.
-            \item EVA informa o e-mail.
+        
+\subsubsubsection{Fluxo alternativo B}
+    \begin{enumerate}[label=\alph*)]
+    \tightlist
+        \item No Passo \textit{e} do Fluxo Básico, a mensagem textual enviada pelo usuário não aparenta ser nem algo parecido com CPF ou e-mail;
+        \item EVA informa que ao usuário que ele precisa informar o CPF ou o e-mail para que ele possa se identificar, e assim, para que eles possam continuar dialogando;
+        \item O fluxo retorna ao Passo \textit{b} do Fluxo básico.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo alternativo C}
+    \begin{enumerate}[label=\alph*)]
+    \tightlist
+        \item No Passo \textit{c} do Fluxo Básico, foi visto que o usuário está bloqueado no sistema;
+        \item EVA informa que por questões de segurança, o usuário está bloqueado por um dia;
+        \item EVA auxilia o usuário, que caso ele de fato ache que possui algum vinculo com a EV.G, que ele entre em contato através do e-mail da EVG;
+        \item EVA informa o e-mail;
+        \item EVA pede desculpa pelo transtorno.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo alternativo D}
+        \begin{enumerate}[label=\alph*)]
+        \tightlist
+            \item No Passo \textit{d} do Fluxo Básico, foi visto que o usuário tentou se autenticar por três vezes sem sucesso;
+            \item EVA bloqueia o usuário por um dia;
+            \item EVA informa que por questões de segurança, o usuário está bloqueado por um dia;
+            \item EVA auxilia o usuário, que caso ele de fato ache que possui um vinculo com a EV.G, que ele entre em contato através do e-mail da EVG;
+            \item EVA informa o e-mail;
             \item EVA pede desculpa pelo transtorno.
         \end{enumerate}
-    \item \textbf{Fluxo alternativo D:}
-        \begin{enumerate}
-            \item No Passo 4 do Fluxo Básico, foi visto que o usuário tentou se autenticar por três vezes sem sucesso.
-            \item EVA bloqueia o usuário por um dia.
-            \item EVA informa que por questões de segurança, o usuário está bloqueado por um dia.
-            \item EVA auxilia o usuário, que caso ele de fato ache que possui um vinculo com a EV.G, que ele entre em contato através do e-mail da EVG.
-            \item EVA informa o e-mail.
-            \item EVA pede desculpa pelo transtorno.
-        \end{enumerate}
-\end{itemize}
 
 \subsubsection{UC03 - Visualizar histórico escolar completo}
+
 \textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar o histórico escolar de um aluno vinculado a EV.G. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, o estado em que se encontra a inscrição do aluno e o estado de sua turma de ensino. 
 
-\begin{itemize}
-    \item \textbf{Atores:}
-        \begin{enumerate}
-            \item ATOR02 - Aluno.
-        \end{enumerate}
-    \item \textbf{Pré-condições:}
-        \begin{enumerate}
-            \item O usuário deve estar autenticado no sistema.
-        \end{enumerate}
-    \item \textbf{Requisitos funcionais:}
-        \begin{enumerate}
-            \item RF01 - Conversação.
-            \item RF02 - Compreensão.
-            \item RF04 - Visualizar histórico escolar.
-        \end{enumerate}
-    \item \textbf{Requisitos não funcionais:}
-        \begin{enumerate}
-            \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade (a).
-            \item RNF04 - Portabilidade.
-            \item RNF05 - Interoperabilidade.
-        \end{enumerate}
-    \item \textbf{Fluxo básico:}
-        \begin{enumerate}
-            \item O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar.
-            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
-            \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
-            \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá informar ao aluno o seu histórico escolar completo. Para cada item identificado, EVA deverá especificar os nome do curso, a cargas horária, o estado da inscrição do aluno e o estado da turma de ensino.
-        \end{enumerate}
-    \item \textbf{Fluxo alternativo A:}
-        \begin{enumerate}
-            \item No Passo 3 do Fluxo básico, foi constatado que o aluno não possui nenhuma matricula nos cursos da EV.G.
-            \item EVA irá informar o aluno que ele não possui nenhuma matricula nos cursos da EV.G
-            \item EVA irá sugerir ao aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
-        \end{enumerate}
-\end{itemize}
+\subsubsubsection{Atores}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item ATOR02 - Aluno.
+    \end{enumerate}
+        
+\subsubsubsection{Pré-condições}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O usuário deve estar autenticado no sistema.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RF01 - Conversação;
+        \item RF02 - Compreensão;
+        \item RF04 - Visualizar histórico escolar.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos não funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RNF01 - Disponibilidade;
+        \item RNF02 - Confidencialidade (a);
+        \item RNF04 - Portabilidade;
+        \item RNF05 - Interoperabilidade.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo básico}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar;
+        \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita;
+        \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno;
+        \item EVA irá formatar os dados encontrados para serem exibidos ao aluno;
+        \item EVA irá informar ao aluno o seu histórico escolar completo. Para cada item identificado, EVA deverá especificar os nome do curso, a cargas horária, o estado da inscrição do aluno e o estado da turma de ensino;
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo alternativo A}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item No Passo \textit{c} do Fluxo básico, foi constatado que o aluno não possui nenhuma matricula nos cursos da EV.G;
+        \item EVA irá informar o aluno que ele não possui nenhuma matricula nos cursos da EV.G;
+        \item EVA irá sugerir ao aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
+    \end{enumerate}
 
 
 \subsubsection{UC04 - Receber auxílio na emissão de certificados}
+
 \textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de auxiliar o aluno vinculado a EV.G no processo de emissão de certificado. EVA irá pesquisar os cursos concluídos pelo aluno, e a partir destes, irá informar-lo quais procedimentos ele deverá realizar para emitir o certificado. Existem três situações possíveis para a emissão de certificados. O primeira situação, caso o curso tenha sido concluído no ano de 2015 para frente, EVA deve orientar o aluno a emitir o certificado no ambiente https://ava.enap.gov.br. O segundo, caso o curso tenha sido concluído entre os anos de 2013 a 2014, EVA deve orientar o aluno a emitir o certificado no ambiente https://moodle23.enap.gov.br. E o último, caso o curso tenha sido concluído antes do ano de 2013, EVA deverá orientar o aluno a enviar um e-mail para ead@enap.gov.br. Além das instruções para a emissão do certificado, para os itens de cada caso, EVA deverá informar o nome do curso e a carga horária.
 
-\begin{itemize}
-    \item \textbf{Atores:}
-        \begin{enumerate}
-            \item ATOR02 - Aluno.
-        \end{enumerate}
-    \item \textbf{Pré-condições:}
-        \begin{enumerate}
-            \item O usuário deve estar autenticado no sistema.
-        \end{enumerate}
-    \item \textbf{Requisitos funcionais:}
-        \begin{enumerate}
-            \item RF01 - Conversação.
-            \item RF02 - Compreensão.
-            \item RF05 - Auxiliar na emissão de certificados.
-        \end{enumerate}
-    \item \textbf{Requisitos não funcionais:}
-        \begin{enumerate}
-            \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade (a).
-            \item RNF04 - Portabilidade.
-            \item RNF05 - Interoperabilidade.
-        \end{enumerate}
-    \item \textbf{Fluxo básico:}
-        \begin{enumerate}
-            \item O aluno envia uma mensagem textual para EVA solicitando ajuda na emissão dos certificados.
-            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
-            \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
-            \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá auxiliar o aluno, com base no ano de conclusão dos cursos encontrados, quais procedimentos ele deverá realizar. Para cada situação, EVA informará o nome do curso e a carga horária de cada item.
-        \end{enumerate}
-    \item \textbf{Fluxo alternativo A:}
-        \begin{enumerate}
-            \item No Passo 3 do Fluxo principal, foi constatado que o aluno não concluiu nenhum curso da EV.G.
-            \item EVA irá informar oa aluno que ele não concluiu nenhum curso da EV.G, logo, não tem como auxiliá-lo na emissão de certificados.
-            \item EVA irá sugerir o aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
-        \end{enumerate}
-\end{itemize}
+\subsubsubsection{Atores}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item ATOR02 - Aluno.
+    \end{enumerate}
+        
+\subsubsubsection{Pré-condições}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O usuário deve estar autenticado no sistema.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RF01 - Conversação;
+        \item RF02 - Compreensão;
+        \item RF05 - Auxiliar na emissão de certificados.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos não funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RNF01 - Disponibilidade;
+        \item RNF02 - Confidencialidade (a);
+        \item RNF04 - Portabilidade;
+        \item RNF05 - Interoperabilidade.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo básico}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O aluno envia uma mensagem textual para EVA solicitando ajuda na emissão dos certificados;
+        \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita;
+        \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno;
+        \item EVA irá formatar os dados encontrados para serem exibidos ao aluno;
+        \item EVA irá auxiliar o aluno, com base no ano de conclusão dos cursos encontrados, quais procedimentos ele deverá realizar. Para cada situação, EVA informará o nome do curso e a carga horária de cada item.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo alternativo A}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item No Passo \textit{c}  do Fluxo principal, foi constatado que o aluno não concluiu nenhum curso da EV.G;
+        \item EVA irá informar oa aluno que ele não concluiu nenhum curso da EV.G, logo, não tem como auxiliá-lo na emissão de certificados;
+        \item EVA irá sugerir o aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
+    \end{enumerate}
 
 
 \subsubsection{UC05 - Visualizar inscrições de cursos em aberto}
 \textbf{Descrição:} Este caso de uso especifica a funcionalidade de EVA de pesquisar e informar quais inscrições de cursos de um aluno vinculado a EV.G que estão em aberto. Para cada item identificado, EVA deve informar o nome do curso, a carga horária, estado da matricula do aluno e o estado da turma. 
 
-\begin{itemize}
-    \item \textbf{Atores:}
-        \begin{enumerate}
-            \item ATOR02 - Aluno.
-        \end{enumerate}
-    \item \textbf{Pré-condições:}
-        \begin{enumerate}
-            \item O usuário deve estar autenticado no sistema.
-        \end{enumerate}
-    \item \textbf{Requisitos funcionais:}
-        \begin{enumerate}
-            \item RF01 - Conversação.
-            \item RF02 - Compreensão.
-            \item RF06 - Visualizar as inscrições de cursos em aberto.
-        \end{enumerate}
-    \item \textbf{Requisitos não funcionais:}
-        \begin{enumerate}
-            \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade (a).
-            \item RNF04 - Portabilidade.
-            \item RNF05 - Interoperabilidade.
-        \end{enumerate}
-    \item \textbf{Fluxo básico:}
-        \begin{enumerate}
-            \item O aluno envia uma mensagem textual para EVA solicitando que deseja saber quais cursos que estão em aberto.
-            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
-            \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno.
-            \item EVA irá formatar os dados encontrados para serem exibidos ao aluno.
-            \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, o estado da inscrição, a carga horária e a situação da turma. 
-        \end{enumerate}
+\subsubsubsection{Atores}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item ATOR02 - Aluno.
+    \end{enumerate}
         
-    \item \textbf{Fluxo alternativo A:}
-        \begin{enumerate}
-            \item No Passo 3 do Fluxo principal, foi constatado que o aluno não possui inscrição em nenhum curso da EV.G.
-            \item EVA irá informar ao aluno que ele não possui nenhuma inscrição nos cursos da EV.G.
-            \item EVA irá sugerir o aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
-        \end{enumerate}
-\end{itemize}
+\subsubsubsection{Pré-condições}
+
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O usuário deve estar autenticado no sistema.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RF01 - Conversação;
+        \item RF02 - Compreensão;
+        \item RF06 - Visualizar as inscrições de cursos em aberto.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos não funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RNF01 - Disponibilidade;
+        \item RNF02 - Confidencialidade (a);
+        \item RNF04 - Portabilidade;
+        \item RNF05 - Interoperabilidade.
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo básico}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O aluno envia uma mensagem textual para EVA solicitando que deseja saber quais cursos que estão em aberto;
+        \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita;
+        \item EVA irá consultar a base de dados da EV.G para pesquisar os dados escolares do aluno;
+        \item EVA irá formatar os dados encontrados para serem exibidos ao aluno;
+        \item EVA irá informar ao aluno quais cursos que estão em aberto. Para cada item identificado, EVA deverá especificar o nome do curso, o estado da inscrição, a carga horária e a situação da turma. 
+    \end{enumerate}
+        
+\subsubsubsection{Fluxo alternativo A}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item No Passo \textit{c} do Fluxo básico, foi constatado que o aluno não possui inscrição em nenhum curso da EV.G;
+        \item EVA irá informar ao aluno que ele não possui nenhuma inscrição nos cursos da EV.G;
+        \item EVA irá sugerir o aluno que ele visite o site da EV.G para ter acesso ao catálogo dos cursos oferecidos pela instituição.
+    \end{enumerate}
 
     
 \subsubsection{UC06 - Efetuar logout}
+
 \textbf{Descrição:} Este caso de uso especifica a funcionalidade onde o usuário deixará de estar autenticado no sistema.
 
-\begin{itemize}
-    \item \textbf{Atores:}
-        \begin{enumerate}
-            \item ATOR01 - Visitante.
-            \item ATOR02 - Aluno.
-        \end{enumerate}
-    \item \textbf{Pré-condições:}
-        \begin{enumerate}
-            \item O usuário deve estar autenticado no sistema.
-        \end{enumerate}
-    \item \textbf{Pós-condições}:
-        \begin{enumerate}
-            \item O usuário deixará de estar autenticado no sistema, voltando a ter acesso limitado às funcionalidades de EVA.
-        \end{enumerate}
-    \item \textbf{Requisitos funcionais:}
-        \begin{enumerate}
-            \item RF01 - Conversação.
-            \item RF02 - Compreensão.
-        \end{enumerate}
-    \item \textbf{Requisitos não funcionais:}
-        \begin{enumerate}
-            \item RNF01 - Disponibilidade.
-            \item RNF02 - Confidencialidade (a).
-            \item RNF04 - Portabilidade.
+\subsubsubsection{Atores}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item ATOR01 - Visitante;
+        \item ATOR02 - Aluno.
+    \end{enumerate}
+        
+\subsubsubsection{Pré-condições}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O usuário deve estar autenticado no sistema.
+    \end{enumerate}
+        
+\subsubsubsection{Pós-condições}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O usuário deixará de estar autenticado no sistema, voltando a ter acesso limitado às funcionalidades de EVA.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos funcionais}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item RF01 - Conversação;
+        \item RF02 - Compreensão.
+    \end{enumerate}
+        
+\subsubsubsection{Requisitos não funcionais}
+        \begin{enumerate}[label=\alph*)]
+        \tightlist
+            \item RNF01 - Disponibilidade;
+            \item RNF02 - Confidencialidade (a);
+            \item RNF04 - Portabilidade;
             \item RNF05 - Interoperabilidade.
         \end{enumerate}
-    \item \textbf{Fluxo básico:}
-        \begin{enumerate}
-            \item O aluno envia uma mensagem textual para EVA solicitando que deseja efetuar o logout.
-            \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita.
-            \item EVA irá desvincular o aluno de sua base de conhecimento.
-            \item O aluno passa a ser um visitante.
-            \item EVA irá informar de que o logout foi feito com sucesso.
-        \end{enumerate}
-\end{itemize}
+        
+\subsubsubsection{Fluxo básico}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item O aluno envia uma mensagem textual para EVA solicitando que deseja efetuar o logout;
+        \item EVA irá consultar sua base de conhecimento para compreender o que o aluno solicita;
+        \item EVA irá desvincular o aluno de sua base de conhecimento;
+        \item O aluno passa a ser um visitante;            \item EVA irá informar de que o logout foi feito com sucesso.
+    \end{enumerate}
 
 
 \section{Modelagem dos diálogos de EVA}
@@ -453,114 +516,128 @@ Nesta subseção, serão detalhados os diálogos de EVA utilizando os cenários.
 
 \subsubsection{Diálogo UC01 - Dialogar com EVA}
 
-\begin{itemize}
-    \item \textbf{Suposição inicial:}
+Especificação do cenário relacionado ao UC01 - Dialogar com EVA.
+
+\subsubsubsection{Suposição inicial}
     
     O usuário envia uma mensagem textual para EVA; EVA consulta sua base de conhecimento para compreender o que o ator solicita; EVA responde ao usuário.
     
-    \begin{enumerate}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
         \item \textbf{Usuário:} Olá, quem é você?
         \item \textbf{EVA:} Eu sou a EVA, a sua secretaria virtual da EVG. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar quais cursos estão em aberto!! Como posso lhe ser útil?
     \end{enumerate}
     
-    \item \textbf{O que pode dar errado:}
+\subsubsubsection{O que pode dar errado}
     
-    O usuário não autenticado solicitar o uso de alguma funcionalidade restrita de EVA.
+O usuário não autenticado solicitar o uso de alguma funcionalidade restrita de EVA.
     
-        \begin{enumerate}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
             \item \textbf{Usuário:} Informe o meu histórico escolar.
             \item \textbf{EVA:} Você ainda não está autenticado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
         \end{enumerate}
     
-    O usuário solicitar algo que EVA não compreende.
+O usuário solicitar algo que EVA não compreende.
     
-        \begin{enumerate}
-            \item \textbf{Usuário:} EVA, existe vida após a morte?
-            \item \textbf{EVA:} Nossa, mil perdões, mas realmente eu não consegui entender o que você precisa.
-        \end{enumerate}
-\end{itemize}
+    \begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item \textbf{Usuário:} EVA, existe vida após a morte?
+        \item \textbf{EVA:} Nossa, mil perdões, mas realmente eu não consegui entender o que você precisa.
+    \end{enumerate}
 
 \subsubsection{Diálogo UC02 - Efetuar login}
 
-\begin{itemize}
-    \item \textbf{Suposição inicial:} 
+Especificação do cenário relacionado ao UC02 - Efetuar login.
+
+\subsubsubsection{Suposição inicial} 
     
-        EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu CPF ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
+EVA solicita que o usuário se identifique para que ela possa lhe dar auxilio mais personalizado; EVA solicita que o usuário informe o seu CPF ou o e-mail; o usuário informa o seu CPF ou e-mail; EVA informa que estará consultando as credenciais em seu banco de dados; EVA dá as boas vindas ao aluno.
         
-        \begin{enumerate}
-            \item \textbf{EVA:} Você ainda não está cadastrado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
-            \item \textbf{Usuário:} test@evg.com
-            \item \textbf{EVA:} Certo.. Aguarde alguns instantes enquanto eu faço a consulta no nosso banco de dados, está bem?
-            \item \textbf{EVA:} Seja muito bem-vindo!! Eu sou a EVA, a sua assistente virtual da EV.G. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar a você quais cursos estão em aberto!! Fique a vontade, faça alguma pergunta.
-        \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Você ainda não está cadastrado no nosso sistema. Por favor, se identifique me enviando seu e-mail ou CPF.
+    \item \textbf{Usuário:} test@evg.com.
+    \item \textbf{EVA:} Certo.. Aguarde alguns instantes enquanto eu faço a consulta no nosso banco de dados, está bem?
+    \item \textbf{EVA:} Seja muito bem-vindo!! Eu sou a EVA, a sua assistente virtual da EV.G. Eu posso pesquisar o seu histórico escolar, te auxiliar na emissão de certificados e também informar a você quais cursos estão em aberto!! Fique a vontade, faça alguma pergunta.
+\end{enumerate}
     
-    \item \textbf{O que pode dar errado:}
+\subsubsubsection{O que pode dar errado}
     
-        As credenciais informadas pelo usuário não conferem.
-        \begin{enumerate}
-            \item \textbf{EVA:} Ops!! Parece que os dados informados não conferem. Por favor, tente novamente.
-        \end{enumerate}
+As credenciais informadas pelo usuário não conferem.
         
-        O usuário envia uma mensagem textual que não é nada parecido com CPF ou e-mail.
-        \begin{enumerate}
-            \item \textbf{EVA:} Por favor, informe o seu e-mail ou o seu CPF. Caso você não tenha essas informações cadastradas, peço que entre em contato com a EV.G.
-        \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Ops!! Parece que os dados informados não conferem. Por favor, tente novamente.
+\end{enumerate}
         
-        O usuário tentou se autenticar por três vezes consecutivas sem sucesso.
-        \begin{enumerate}
-            \item \textbf{EVA:} Infelizmente, por motivos de segurança, estaremos bloqueando suas solicitações de registro por um dia. Caso você ache que os dados inseridos estão corretos, peço que você entre em contato com a EV.G. Tente novamente amanhã, desculpe o transtorno.
-        \end{enumerate}
+O usuário envia uma mensagem textual que não é nada parecido com CPF ou e-mail.
+
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Por favor, informe o seu e-mail ou o seu CPF. Caso você não tenha essas informações cadastradas, peço que entre em contato com a EV.G.
+\end{enumerate}
         
-        O usuário, já bloqueado, tenta se autenticar novamente.
-        \begin{enumerate}
-            \item \textbf{EVA:} Por motivos de segurança, você está bloqueado por um dia. Caso você ache que os dados inseridos anteriormente estejam corretos, peço que você entre em contato com a EV.G. Tente novamente amanhã, desculpe o transtorno.
-        \end{enumerate}
-    
-\end{itemize}
+O usuário tentou se autenticar por três vezes consecutivas sem sucesso.
+
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Infelizmente, por motivos de segurança, estaremos bloqueando suas solicitações de registro por um dia. Caso você ache que os dados inseridos estão corretos, peço que você entre em contato com a EV.G. Tente novamente amanhã, desculpe o transtorno.
+\end{enumerate}
+        
+O usuário, já bloqueado, tenta se autenticar novamente.
+
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Por motivos de segurança, você está bloqueado por um dia. Caso você ache que os dados inseridos anteriormente estejam corretos, peço que você entre em contato com a EV.G. Tente novamente amanhã, desculpe o transtorno.
+\end{enumerate}
 
 \subsubsection{Diálogo UC03 - Visualizar histórico escolar completo}
 
-\begin{itemize}
-    \item \textbf{Suposição inicial:}
+Especificação do cenário relacionado ao UC03 - Visualizar histórico escolar completo.
+
+\subsubsubsection{Suposição inicial}
     
-        O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar; EVA irá consultar a base de dados da EV.G para pesquisar os dados do histórico do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA informa o histórico escolar do aluno.
+O aluno envia uma mensagem textual para EVA solicitando o seu histórico escolar; EVA irá consultar a base de dados da EV.G para pesquisar os dados do histórico do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA informa o histórico escolar do aluno.
         
-        \begin{enumerate}
-            \item \textbf{Aluno:} EVA, gostaria de verificar meu histórico escolar, por favor.
-            \item \textbf{EVA:} Só um segundo.
-            \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou.
-            \item \textbf{EVA:} Curso: Informática básica; \\
-            Carga horária: 70 horas; \\
-            Situação da inscrição: Concluído; \\
-            Situação da turma: Finalizada;\\ \ldots
-        \end{enumerate}
-    
-    \item \textbf{O que pode dar errado:}
-    
-        O usuário não possui nenhuma inscrição nos cursos da EV.G.
-        
-        \begin{enumerate}
-            \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
-            \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{Aluno:} EVA, gostaria de verificar meu histórico escolar, por favor.
+    \item \textbf{EVA:} Só um segundo.
+    \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou.
+    \item \textbf{EVA:} Curso: Informática básica; Carga horária: 70 horas; Situação da inscrição: Concluído;
+    Situação da turma: Finalizada.
 \end{enumerate}
     
-    \item \textbf{Estado do sistema na conclusão:}
+\subsubsubsection{O que pode dar errado}
     
-        Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+O usuário não possui nenhuma inscrição nos cursos da EV.G.
         
-        \begin{enumerate}
-            \item \textbf{EVA:} Deseja mais alguma coisa?
-        \end{enumerate}
-    \end{itemize}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
+    \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+\end{enumerate}
+    
+\subsubsubsection{Estado do sistema na conclusão}
+    
+Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+        
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Deseja mais alguma coisa?
+\end{enumerate}
 
 \subsubsection{Diálogo UC04 - Receber auxílio na emissão de certificados}
 
-\begin{itemize}
-    \item \textbf{Suposição inicial:}
+Especificação do cenário relacionado ao UC04 - Receber auxílio na emissão de certificados.
+
+\subsubsubsection{Suposição inicial}
     
-        O aluno envia uma mensagem textual para EVA solicitando auxilio na emissão de certificados; EVA irá consultar a base de dados da EV.G para pesquisar os dados dos cursos concluídos do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA auxilia o aluno no processo de emissão de certificado.
+O aluno envia uma mensagem textual para EVA solicitando auxilio na emissão de certificados; EVA irá consultar a base de dados da EV.G para pesquisar os dados dos cursos concluídos do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA auxilia o aluno no processo de emissão de certificado.
         
-        \begin{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
             \item \textbf{Aluno:} Eu gostaria de auxílio na emissão dos meus certificados, por favor.
             \item \textbf{EVA:} Só um segundo.
             \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou.
@@ -570,80 +647,81 @@ Nesta subseção, serão detalhados os diálogos de EVA utilizando os cenários.
             Para emitir o certificado de algum curso relacionado acima, acesse: https://moodle23.enap.gov.br/.
             \item \textbf{EVA:} Você finalizou o(s) seguinte(s) curso(s) no período anterior a 2013: Federalismo fiscal no Brasil (CH - 50 horas). \\
             Para emitir o certificado de algum curso relacionado acima, envie um e-mail para 'ead@enap.gov.br', com o título do curso que você deseja emitir o certificado, o seu nome e CPF.
-        \end{enumerate}
+\end{enumerate}
     
-    \item \textbf{O que pode dar errado:}
+\subsubsubsection{O que pode dar errado}
     
-        O usuário não possui nenhuma inscrição nos cursos da EV.G.
+O usuário não possui nenhuma inscrição nos cursos da EV.G.
         
-        \begin{enumerate}
-            \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
-            \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
-        \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
+    \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+\end{enumerate}
     
-    \item \textbf{Estado do sistema na conclusão:}
+\subsubsubsection{Estado do sistema na conclusão}
     
-        Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
         
-        \begin{enumerate}
-            \item \textbf{EVA:} Deseja mais alguma coisa?
-        \end{enumerate}
-\end{itemize}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Deseja mais alguma coisa?
+\end{enumerate}
 
 
 \subsubsection{Diálogo UC05 - Visualizar inscrições de cursos em aberto}
 
-\begin{itemize}
-    \item \textbf{Suposição inicial:}
+Especificação do cenário relacionado ao UC05 - Visualizar inscrições de cursos em aberto.
+
+\subsubsubsection{Suposição inicial:}
     
-        O aluno envia uma mensagem textual para EVA solicitando a visualização dos cursos em aberto; EVA irá consultar a base de dados da EV.G para pesquisar os dados dos cursos que estão em aberto do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA informa o aluno quais são os seus cursos em aberto.
+O aluno envia uma mensagem textual para EVA solicitando a visualização dos cursos em aberto; EVA irá consultar a base de dados da EV.G para pesquisar os dados dos cursos que estão em aberto do aluno; EVA se desculpa por ter deixado o aluno esperando; EVA informa o aluno quais são os seus cursos em aberto.
         
-        \begin{enumerate}
-            \item \textbf{Aluno:}
-            \item \textbf{EVA:} Só um segundo.
-            \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou
-            \item \textbf{EVA:} Curso: Ética e Serviço público; \\
-            Carga horária: 20 horas; \\
-            Situação da inscrição: Em andamento; \\
-            Situação da turma: Aberto;\\ \ldots
-        \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{Aluno:} Gostaria de ver os cursos que estão em andamento.
+    \item \textbf{EVA:} Só um segundo.
+    \item \textbf{EVA:} Desculpe a demora! Aqui estão os dados que você solicitou
+    \item \textbf{EVA:} Curso: Ética e Serviço público; Carga horária: 20 horas; Situação da inscrição: Em andamento; Situação da turma: Aberto.
+\end{enumerate}
     
-    \item \textbf{O que pode dar errado:}
+\subsubsubsection{O que pode dar errado}
     
-    O usuário não possui nenhuma inscrição nos cursos da EV.G.
+O usuário não possui nenhuma inscrição nos cursos da EV.G.
     
-        \begin{enumerate}
-            \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
-            \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
-        \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{EVA:} Parece que você não tem nenhuma informação a ser exibida.
+    \item \textbf{EVA:} Porque você não inicia um curso na nossa plataforma? Para ter acesso ao catálogo dos cursos da EV.G, acesse: https://evg.gov.br/catalogo.
+\end{enumerate}
     
-    \item \textbf{Estado do sistema na conclusão:}
+\subsubsubsection{Estado do sistema na conclusão}
     
-        Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
+Após atender o aluno, EVA irá perguntar se o mesmo deseja mais alguma coisa.
         
-        \begin{enumerate}
-            \item \textbf{EVA:} Deseja mais alguma coisa?
-        \end{enumerate}
-    
-\end{itemize}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+        \item \textbf{EVA:} Deseja mais alguma coisa?
+\end{enumerate}
 
 \subsubsection{Diálogo UC06 - Efetuar logout}
 
-\begin{itemize}
-    \item \textbf{Suposição inicial:}
+Especificação do cenário relacionado ao UC06 - Efetuar logout.
+
+\subsubsubsection{Suposição inicial}
     
-        O aluno envia uma mensagem textual para EVA solicitando que deseja efetuar o logout no sistema.
+O aluno envia uma mensagem textual para EVA solicitando que deseja efetuar o logout no sistema.
         
-        \begin{enumerate}
-            \item \textbf{Aluno:} EVA, gostaria de efetuar o logout.
-            \item \textbf{EVA:} Só um segundo.
-            \item \textbf{EVA:} O logout foi efetuado com sucesso. Lembre-se, sempre que desejar eu estarei por aqui, basta apenas informar o seu e-mail ou CPF. Até logo!
-        \end{enumerate}
+\begin{enumerate}[label=\alph*)]
+        \tightlist
+    \item \textbf{Aluno:} EVA, gostaria de efetuar o logout.
+    \item \textbf{EVA:} Só um segundo.
+    \item \textbf{EVA:} O logout foi efetuado com sucesso. Lembre-se, sempre que desejar eu estarei por aqui, basta apenas informar o seu e-mail ou CPF. Até logo!
+\end{enumerate}
     
-    \item \textbf{Estado do sistema na conclusão:}
+\subsubsubsection{Estado do sistema na conclusão:}
     
-        O aluno deixa de estar autenticado no sistema de EVA.
-\end{itemize}
+O aluno deixa de estar autenticado no sistema de EVA.
 
 
 \section{Arquitetura de EVA}
